@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21B49E8D2655809300249844 /* GUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21B49E8B2655809200249844 /* GUI.cpp */; };
+		21B49E962655825D00249844 /* classTextDesign.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21B49E942655825D00249844 /* classTextDesign.cpp */; };
 		21CF11A1264DAD3500B601DB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21CF11A0264DAD3500B601DB /* main.cpp */; };
 		21CF11C6264DB00900B601DB /* libsfml-system.2.5.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CF11C1264DB00900B601DB /* libsfml-system.2.5.1.dylib */; };
 		21CF11C7264DB00900B601DB /* libsfml-audio.2.5.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CF11C2264DB00900B601DB /* libsfml-audio.2.5.1.dylib */; };
@@ -28,6 +30,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		21B49E8B2655809200249844 /* GUI.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GUI.cpp; sourceTree = "<group>"; };
+		21B49E8C2655809200249844 /* GUI.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GUI.hpp; sourceTree = "<group>"; };
+		21B49E90265580B600249844 /* librariesForGUI.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = librariesForGUI.hpp; sourceTree = "<group>"; };
+		21B49E942655825D00249844 /* classTextDesign.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = classTextDesign.cpp; sourceTree = "<group>"; };
+		21B49E952655825D00249844 /* classTextDesign.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = classTextDesign.hpp; sourceTree = "<group>"; };
 		21CF119D264DAD3500B601DB /* SLAR */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SLAR; sourceTree = BUILT_PRODUCTS_DIR; };
 		21CF11A0264DAD3500B601DB /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		21CF11C1264DB00900B601DB /* libsfml-system.2.5.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsfml-system.2.5.1.dylib"; path = "SFML/lib/libsfml-system.2.5.1.dylib"; sourceTree = "<group>"; };
@@ -74,6 +81,11 @@
 			isa = PBXGroup;
 			children = (
 				21CF11A0264DAD3500B601DB /* main.cpp */,
+				21B49E8C2655809200249844 /* GUI.hpp */,
+				21B49E8B2655809200249844 /* GUI.cpp */,
+				21B49E952655825D00249844 /* classTextDesign.hpp */,
+				21B49E942655825D00249844 /* classTextDesign.cpp */,
+				21B49E90265580B600249844 /* librariesForGUI.hpp */,
 			);
 			path = SLAR;
 			sourceTree = "<group>";
@@ -146,7 +158,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21B49E962655825D00249844 /* classTextDesign.cpp in Sources */,
 				21CF11A1264DAD3500B601DB /* main.cpp in Sources */,
+				21B49E8D2655809300249844 /* GUI.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
