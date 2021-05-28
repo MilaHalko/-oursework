@@ -1,12 +1,12 @@
 #pragma once
-#include "classMatrix.hpp"
+#include "matrix.h"
 
-class methodJacobi : Matrix {
+class methodJacobi : public Matrix {
     float getIterationResult(int);
     void printIteration();
 public:
     methodJacobi (int, float, vector<vector<float>>&, vector<float>&);
-    
+
     bool Iteration();
 };
 

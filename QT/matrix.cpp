@@ -1,11 +1,12 @@
-#include "classMatrix.hpp"
+#include "matrix.h"
 
-Matrix::Matrix(int size, float e, vector<vector<float>> &A, vector<float> &B): size(size), e(e), iterationCounter(0) {
+Matrix::Matrix(int size, float e, vector<vector<float>> &A, vector<float> &B): size(size), e(e), iterationCounter(0), answerFile("Answer.txt") {
     this->A.resize(size);
     this->B.resize(size);
     this->X.resize(size);
     this->oldX.resize(size);
-    
+    answer.open(answerFile);
+
     for (int i = 0; i < size; i++) {
         this->A[i].resize(size);
         for (int j = 0; j < size; j++)
@@ -26,13 +27,13 @@ bool Matrix::DiagonalPrevails() {
     for (int i = 0; i < size; i++) {
         int diagonal = abs(A[i][i]);
         int others = 0;
-        
+
         for (int j = 0; j < size; j++)
             if (j != i)
                 others += abs(A[i][j]);
-        
+
         if (diagonal < others) {
-            cout << "Absolute value of the diagonal element [" << i << "; " << i << "] is smaller than absolute value of the sum of the other elements in this line!" << endl;
+            answer << "Absolute value of the diagonal element [" << i << "; " << i << "] is smaller than absolute value of the sum of the other elements in this line!" << endl;
             return changeMatrix();
         }
     }
@@ -67,34 +68,32 @@ bool Matrix::changeMatrix() {
     vector<bool> sub (size, false);
     vector<vector<float>> subA (size);
     vector<float> subB (size);
-    
+
     for (int i = 0; i < size; i++)
         subA[i].resize(size);
-    
+
     for (int i = 0; i < size; i++) {
         int maxIndex = 0;
         for (int j = 1; j < size; j++)
             if (abs(A[i][maxIndex]) < abs(A[i][j]))
                 maxIndex = j;
-        
+
         if (sub[maxIndex] == true)
             return false;
-        
+
         sub[maxIndex] = true;
         for (int j = 0; j < size; j++) {
             subA[maxIndex][j] = A[i][j];
         }
         subB[maxIndex] = B[i];
     }
-    
+
     for (int i = 0; i < size; i++) {
         for (int j = 0; j < size; j++)
             A[i][j] = subA[i][j];
         B[i] = subB[i];
     }
-    cout << ".. Array upgrading process .." << endl;
-    printMatrix();
-    cout << "New array has been successfully upgraded!" << endl;
+    answer << "But array has been successfully upgraded!" << endl;
     return true;
 }
 
@@ -124,19 +123,22 @@ void Matrix::setOldX() {
 
 //PRINT_SOLUTION~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-void Matrix::printMatrix() {
+void Matrix::printX() {
     for (int i = 0; i < size; i++) {
-        for (int j = 0; j < size; j++)
-            cout << A[i][j] << " ";
-        cout << "   =   " << B[i] << endl;
+        answer << "X" << i << " = " << oldX[i] << endl;
     }
-    cout << endl;
+    answer << endl;
 }
 
 
-void Matrix::printX() {
-    for (int i = 0; i < size; i++) {
-        cout << "X" << i << " = " << oldX[i] << endl;
+void Matrix::getAnswer(QVector<QString> &answerSTR) {
+    answer.close();
+    string subSTR;
+
+    ifstream answerIn (answerFile);
+    while (getline(answerIn, subSTR)) {
+        QString subQSTR = QString::fromStdString(subSTR);
+        answerSTR.push_back(QString(subQSTR));
     }
-    cout << endl;
+    answerIn.close();
 }

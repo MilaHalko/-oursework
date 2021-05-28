@@ -1,13 +1,13 @@
 #pragma once
-#include "classMatrix.hpp"
+#include "matrix.h"
 
-class methodGradient : Matrix {
+class methodGradient : public Matrix {
     float getIterationResult(int);
     void printIteration();
     vector<int> v;
 public:
     methodGradient (int, float, vector<vector<float>>&, vector<float>&);
     ~methodGradient();
-    
+
     bool Iteration();
 };

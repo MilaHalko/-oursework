@@ -12,11 +12,20 @@ SOURCES += \
     checkinginput.cpp \
     main.cpp \
     mainwindow.cpp \
+    matrix.cpp \
+    methodGauss.cpp \
+    methodGradient.cpp \
+    methodJacobi.cpp \
     solving.cpp
 
 HEADERS += \
+    SOLEMethodsLibrary.h \
     checkinginput.h \
     mainwindow.h \
+    matrix.h \
+    methodGauss.h \
+    methodGradient.h \
+    methodJacobi.h \
     solving.h
 
 FORMS += \

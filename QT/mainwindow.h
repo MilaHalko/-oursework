@@ -1,11 +1,15 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
+#pragma once
 #include <QMainWindow>
-#include "solving.h"
 #include <QMessageBox>
 #include <QProcess>
+#include <QRandomGenerator>
+#include <ctime>
 #include "checkinginput.h"
+#include "solving.h"
+#include "SOLEMethodsLibrary.h"
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -31,6 +35,8 @@ private slots:
     void on_start_clicked();
 
     void on_actionNew_SOLE_triggered();
+
+    void countSOLE();
 
 
     //INPUT_CHECKING~~~~~~~~~~~~~~~~~~~

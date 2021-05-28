@@ -1,18 +1,16 @@
-#include "classMethodGauss.hpp"
+#include "methodGauss.h"
 
 methodGauss::methodGauss(int size, float e, vector<vector<float>> &A, vector<float> &B) : Matrix(size, e, A, B) {}
 
 bool methodGauss::Iteration(){
-    printMatrix();
     if (!DiagonalPrevails()  ||  determinant(size) == 0)
         return false;
-    cout << "Determinant = " << determinant(size) << endl << endl;
+    answer << "Determinant = " << determinant(size) << endl << endl;
     do {
         iterationCounter++;
         setOldX();
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < size; i++)
             X[i] = getIterationResult(i);
-        }
         printIteration();
     } while (countE() > e);
     return true;
@@ -29,25 +27,24 @@ float methodGauss::getIterationResult(int i) {
 
 void methodGauss::printIteration(){
     printX();
-    cout << "Iteration #" << iterationCounter << ":" << endl;
+    answer << "Iteration #" << iterationCounter << ":" << endl;
     for (int i = 0; i < size; i++) {
-        cout << "X" << i << " = (";
+        answer << "X" << i << " = (";
         for (int j = 0; j < size; j++)
             if (i != j) {
-                    cout << "(" << -A[i][j] << " * ";
+                    answer << "(" << -A[i][j] << " * ";
                 if (i < j)
-                    cout << oldX[j] << ") + ";
+                    answer << oldX[j] << ") + ";
                 else
-                    cout << X[j] << ") + ";
+                    answer << X[j] << ") + ";
             }
-        cout << B[i] << ") / " << A[i][i] << " = " << X[i] << endl;
+        answer << B[i] << ") / " << A[i][i] << " = " << X[i] << endl;
     }
-    cout << endl;
-    
-    cout << "e = " << e << ",\t" << "max subtraction = " << countE() << "\t->\t";
+    answer << endl;
+    answer << "e = " << e << ",\t" << "max subtraction = " << countE() << "\t->\t";
     if (countE() > e)
-        cout << "e < maxX" << endl << endl;
+        answer << "e < maxX" << endl << endl;
     else {
-        cout << "e >= maxX" << endl << "So the answer:" << endl; printX(); cout << endl;
+        answer << "e >= maxX" << endl << "So the answer:" << endl; printX(); answer << endl;
     }
 }
