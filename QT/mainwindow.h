@@ -24,7 +24,7 @@ public:
 
 private slots:
 
-    void on_size_textChanged(const QString &arg1);
+    void on_createArray_clicked();
 
     void on_generatingNums_clicked();
 
@@ -34,9 +34,10 @@ private slots:
 
 
     //INPUT_CHECKING~~~~~~~~~~~~~~~~~~~
-    bool GoodSize();
-    bool GoodMethod();
-    bool GoodAccuracy();
+    bool goodInt(QString);
+    bool goodFloat(QString);
+    bool goodMethod();
+    bool goodTable();
 
 
 private:

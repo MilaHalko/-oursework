@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "DA4D2B9E-79DB-4689-B243-24EBA30E7B32"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "72FE0D9F-72D3-4A15-94DD-BC255C9EFC72"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SLAR_tests/main.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "8"
+            endingLineNumber = "8"
+            landmarkName = "main()"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "725B9BCE-9DEF-4F08-9BDD-248CCF8E6EAB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SLAR_tests/main.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "10"
+            endingLineNumber = "10"
+            landmarkName = "main()"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "77011962-CBC5-4B1B-8923-4E6D3C84266D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SLAR_tests/classMatrix.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "5"
+            endingLineNumber = "5"
+            landmarkName = "Matrix::Matrix(size, e, A, B)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3166CD61-99EF-4DFB-91CA-EBEF82EE42B3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SLAR_tests/classMatrix.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "4"
+            endingLineNumber = "4"
+            landmarkName = "Matrix::Matrix(size, e, A, B)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C7754F32-1C00-4ED4-8FB3-3C934C222125"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SLAR_tests/classMethodGauss.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "3"
+            endingLineNumber = "3"
+            landmarkName = "methodGauss::methodGauss(size, e, A, B)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C7754F32-1C00-4ED4-8FB3-3C934C222125 - 8234818879a71eb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "methodGauss::methodGauss(int, float, std::__1::vector&lt;std::__1::vector&lt;float, std::__1::allocator&lt;float&gt; &gt;, std::__1::allocator&lt;std::__1::vector&lt;float, std::__1::allocator&lt;float&gt; &gt; &gt; &gt;&amp;, std::__1::vector&lt;float, std::__1::allocator&lt;float&gt; &gt;&amp;)"
+                  moduleName = "SLAR_tests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mila/Documents/Progs/Coursework/SLAR_tests/SLAR_tests/classMethodGauss.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "3"
+                  endingLineNumber = "3"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "C7754F32-1C00-4ED4-8FB3-3C934C222125 - 8234818879a71eb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "methodGauss::methodGauss(int, float, std::__1::vector&lt;std::__1::vector&lt;float, std::__1::allocator&lt;float&gt; &gt;, std::__1::allocator&lt;std::__1::vector&lt;float, std::__1::allocator&lt;float&gt; &gt; &gt; &gt;&amp;, std::__1::vector&lt;float, std::__1::allocator&lt;float&gt; &gt;&amp;)"
+                  moduleName = "SLAR_tests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mila/Documents/Progs/Coursework/SLAR_tests/SLAR_tests/classMethodGauss.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "3"
+                  endingLineNumber = "3"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A1026E5D-5DBE-4C70-B524-E4099613C09B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SLAR_tests/classMatrix.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "3"
+            endingLineNumber = "3"
+            landmarkName = "Matrix::Matrix(size, e, A, B)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A1026E5D-5DBE-4C70-B524-E4099613C09B - d0f90f0dc4d23203"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Matrix::Matrix(int, float, std::__1::vector&lt;std::__1::vector&lt;float, std::__1::allocator&lt;float&gt; &gt;, std::__1::allocator&lt;std::__1::vector&lt;float, std::__1::allocator&lt;float&gt; &gt; &gt; &gt;&amp;, std::__1::vector&lt;float, std::__1::allocator&lt;float&gt; &gt;&amp;)"
+                  moduleName = "SLAR_tests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mila/Documents/Progs/Coursework/SLAR_tests/SLAR_tests/classMatrix.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "3"
+                  endingLineNumber = "3"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "A1026E5D-5DBE-4C70-B524-E4099613C09B - d0f90f0dc4d23203"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Matrix::Matrix(int, float, std::__1::vector&lt;std::__1::vector&lt;float, std::__1::allocator&lt;float&gt; &gt;, std::__1::allocator&lt;std::__1::vector&lt;float, std::__1::allocator&lt;float&gt; &gt; &gt; &gt;&amp;, std::__1::vector&lt;float, std::__1::allocator&lt;float&gt; &gt;&amp;)"
+                  moduleName = "SLAR_tests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mila/Documents/Progs/Coursework/SLAR_tests/SLAR_tests/classMatrix.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "3"
+                  endingLineNumber = "3"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3643B753-4484-4C7C-B68C-2FCA29D4B5CD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SLAR_tests/classMethodGauss.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "methodGauss::Iteration()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9AAC5372-AC33-469D-BA04-845EE3F3980E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SLAR_tests/classMethodGauss.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "methodGauss::printIteration()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "226635E2-4557-4610-80B0-B8F1D509E446"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SLAR_tests/classMatrix.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "Matrix::determinant(size)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E599625E-8516-45E6-9ACC-0CAF016B0E96"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SLAR_tests/classMatrix.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "Matrix::determinant(size)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "97443A34-9BB2-4B99-8465-2A935C6C1A26"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SLAR_tests/classMethodGradient.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "4"
+            endingLineNumber = "4"
+            landmarkName = "methodGradient::methodGradient(size, e, A, B)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BBC46FAB-0C59-4C3D-BF9B-42CA4D6DD66F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SLAR_tests/main.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "main()"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

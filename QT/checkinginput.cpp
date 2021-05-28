@@ -1,13 +1,15 @@
 #include "checkinginput.h"
 
-bool CheckSize(string &str)
+bool CheckInt(string &str)
 {
     bool correct = true;
 
-    for (int i = 0; i < str.size(); i++)
-    {
-        if(!(isnumber(str[i])  ||  str[i] == ' '))
-        {
+    if (str.empty())
+        return false;
+
+    for (int i = 0; i < str.size(); i++) {
+        if (str[0] == '0') return false;
+        if(!(isnumber(str[i]))) {
             correct = false;
             break;
         }
@@ -15,20 +17,14 @@ bool CheckSize(string &str)
     return correct;
 }
 
-bool CheckAccuracy(string &str)
-{
-    bool correct = true;
-    int pos = str.find('.');
-    if (pos == 0  ||  pos == -1)
-        return !correct;
+bool CheckFloat(string &str) {
+    int minus = str.find('-');
+    int dot = str.find('.');
+    if (dot == 0  ||  str.find('.', dot + 1) != -1  ||  str.empty()  ||  minus > 1)
+        return false;
 
     for (int i = 0; i < str.size(); i++)
-    {
-        if(!(isnumber(str[i])  ||  str[i] == ' '  ||  str[i] == '.'))
-        {
-            correct = false;
-            break;
-        }
-    }
-    return correct;
+        if(!(isnumber(str[i])  ||  str[i] == '.'  ||  str[i] == '-'))
+            return false;
+    return true;
 }
