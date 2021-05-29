@@ -42,23 +42,26 @@ bool Matrix::DiagonalPrevails() {
 
 
 float Matrix::determinant(int size) {
+    Matrix subMatrix(this->size, this->e, this->A, this->B);
     float result;
     if (size > 2) {
         for (int j = this->size - size + 1; j < this->size; j++) {
-            if (A[this->size - size][j] != 0) {
-                float sub = A[this->size - size][j] / A[this->size - size][this->size - size];
+            if (subMatrix.A[this->size - size][j] != 0) {
+                float sub = subMatrix.A[this->size - size][j] / subMatrix.A[this->size - size][this->size - size];
                 for (int i = this->size - size; i < this->size; i++) {
-                    A[i][j] -= sub * A[i][this->size - size];
+                    subMatrix.A[i][j] -= sub * subMatrix.A[i][this->size - size];
                 }
             }
         }
-        result = A[this->size - size][this->size - size] * determinant(size - 1);
+        result = subMatrix.A[this->size - size][this->size - size] * determinant(size - 1);
     }
     else {
         if (size == 1)
             result = A[0][0];
-        else
-            result = A[this->size - size][this->size - size] * A[this->size - size + 1][this->size - size + 1] - A[this->size - size][this->size - size + 1] * A[this->size - size + 1][this->size - size];
+        else {
+            result = subMatrix.A[this->size - size][this->size - size] * subMatrix.A[this->size - size + 1][this->size - size + 1];
+            result -= subMatrix.A[this->size - size][this->size - size + 1] * subMatrix.A[this->size - size + 1][this->size - size];
+        }
     }
     return result;
 }

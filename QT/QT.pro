@@ -10,6 +10,8 @@ CONFIG += c++11
 
 SOURCES += \
     checkinginput.cpp \
+    filename.cpp \
+    helpw.cpp \
     main.cpp \
     mainwindow.cpp \
     matrix.cpp \
@@ -21,6 +23,8 @@ SOURCES += \
 HEADERS += \
     SOLEMethodsLibrary.h \
     checkinginput.h \
+    filename.h \
+    helpw.h \
     mainwindow.h \
     matrix.h \
     methodGauss.h \
@@ -29,6 +33,8 @@ HEADERS += \
     solving.h
 
 FORMS += \
+    filename.ui \
+    helpw.ui \
     mainwindow.ui \
     solving.ui
 

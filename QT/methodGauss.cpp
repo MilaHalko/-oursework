@@ -32,7 +32,7 @@ void methodGauss::printIteration(){
         answer << "X" << i << " = (";
         for (int j = 0; j < size; j++)
             if (i != j) {
-                    answer << "(" << -A[i][j] << " * ";
+                    answer << "(" << -(A[i][j]) << " * ";
                 if (i < j)
                     answer << oldX[j] << ") + ";
                 else
@@ -41,7 +41,7 @@ void methodGauss::printIteration(){
         answer << B[i] << ") / " << A[i][i] << " = " << X[i] << endl;
     }
     answer << endl;
-    answer << "e = " << e << ",\t" << "max subtraction = " << countE() << "\t->\t";
+    answer << "e = " << e << ",\t" << "max subtraction =" << countE() << "\t->\t";
     if (countE() > e)
         answer << "e < maxX" << endl << endl;
     else {

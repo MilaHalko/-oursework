@@ -9,6 +9,7 @@
 #include "checkinginput.h"
 #include "solving.h"
 #include "SOLEMethodsLibrary.h"
+#include "helpw.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -45,6 +46,8 @@ private slots:
     bool goodMethod();
     bool goodTable();
 
+
+    void on_instruction_clicked();
 
 private:
     Ui::MainWindow *ui;

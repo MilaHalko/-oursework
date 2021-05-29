@@ -65,7 +65,7 @@ void MainWindow::countSOLE() {
     for (int i = 0; i < ui->size->text().toInt(); i++)
         B[i] = ui->A->item(i,ui->size->text().toInt())->text().toInt();
 
-    bool result;
+    bool result = false;
     QVector<QString> answerSTR;
     answerSTR.resize(0);
 
@@ -87,6 +87,7 @@ void MainWindow::countSOLE() {
         QMessageBox::critical(this, "SOLE answer:", "There is no solution!");
     else {
         Solving window2;
+        window2.setAnswerSTR(answerSTR);
         window2.setModal(true);
         window2.ShowAnswer(answerSTR);
         window2.exec();
@@ -128,4 +129,12 @@ bool MainWindow::goodTable() {
 }
 
 
+
+
+void MainWindow::on_instruction_clicked()
+{
+    helpW w;
+    w.setModal(true);
+    w.exec();
+}
 

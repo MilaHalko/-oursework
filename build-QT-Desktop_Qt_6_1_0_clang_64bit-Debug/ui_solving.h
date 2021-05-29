@@ -43,15 +43,26 @@ public:
     {
         if (Solving->objectName().isEmpty())
             Solving->setObjectName(QString::fromUtf8("Solving"));
-        Solving->resize(844, 604);
+        Solving->resize(857, 604);
+        Solving->setStyleSheet(QString::fromUtf8("background-color: rgb(213, 228, 255);"));
         verticalLayoutWidget = new QWidget(Solving);
         verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(730, 20, 101, 571));
+        verticalLayoutWidget->setGeometry(QRect(730, 10, 118, 571));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         pushButton = new QPushButton(verticalLayoutWidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        QFont font;
+        font.setFamilies({QString::fromUtf8("Times New Roman")});
+        font.setPointSize(14);
+        font.setBold(true);
+        pushButton->setFont(font);
+        pushButton->setStyleSheet(QString::fromUtf8("color: rgb(27, 46, 79);\n"
+"font-size: 5.0em;\n"
+"font-family: 'Times New Roman', 14;\n"
+"background-color: rgb(243, 255, 251);\n"
+"border: 1.5px solid rgb(141, 156, 201);"));
 
         verticalLayout->addWidget(pushButton);
 
@@ -61,6 +72,12 @@ public:
 
         pushButton_2 = new QPushButton(verticalLayoutWidget);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+        pushButton_2->setFont(font);
+        pushButton_2->setStyleSheet(QString::fromUtf8("color: rgb(27, 46, 79);\n"
+"font-size: 5.0em;\n"
+"font-family: 'Times New Roman', 14;\n"
+"background-color: rgb(243, 255, 251);\n"
+"border: 1.5px solid rgb(141, 156, 201);"));
 
         verticalLayout->addWidget(pushButton_2);
 
@@ -80,11 +97,11 @@ public:
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
         label = new QLabel(scrollAreaWidgetContents);
         label->setObjectName(QString::fromUtf8("label"));
-        QFont font;
-        font.setFamilies({QString::fromUtf8("Times New Roman")});
-        font.setPointSize(16);
-        font.setBold(true);
-        label->setFont(font);
+        QFont font1;
+        font1.setFamilies({QString::fromUtf8("Times New Roman")});
+        font1.setPointSize(16);
+        font1.setBold(true);
+        label->setFont(font1);
         label->setStyleSheet(QString::fromUtf8("color: rgb(27, 46, 79);\n"
 "font-size: 5.0em;\n"
 "font-family: 'Times New Roman', 14;"));
@@ -93,6 +110,8 @@ public:
 
         answer = new QTableWidget(scrollAreaWidgetContents);
         answer->setObjectName(QString::fromUtf8("answer"));
+        answer->setStyleSheet(QString::fromUtf8("background-color: rgb(243, 255, 251);\n"
+"border: 1.5px solid rgb(141, 156, 201);"));
         answer->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         answer->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         answer->setRowCount(0);
@@ -120,7 +139,7 @@ public:
     {
         Solving->setWindowTitle(QCoreApplication::translate("Solving", "Dialog", nullptr));
         pushButton->setText(QCoreApplication::translate("Solving", "Go back", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("Solving", "download", nullptr));
+        pushButton_2->setText(QCoreApplication::translate("Solving", "Safe solution", nullptr));
         label->setText(QCoreApplication::translate("Solving", "Solution:", nullptr));
     } // retranslateUi
 

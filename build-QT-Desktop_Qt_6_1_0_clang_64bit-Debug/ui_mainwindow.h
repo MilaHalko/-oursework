@@ -40,8 +40,8 @@ public:
     QPushButton *start;
     QWidget *gridLayoutWidget_4;
     QGridLayout *gridLayout_2;
-    QLineEdit *size;
     QLabel *label;
+    QLineEdit *size;
     QPushButton *instruction;
     QWidget *gridLayoutWidget_2;
     QGridLayout *gridLayout_3;
@@ -81,8 +81,7 @@ public:
         sizePolicy.setVerticalStretch(2);
         sizePolicy.setHeightForWidth(centralwidget->sizePolicy().hasHeightForWidth());
         centralwidget->setSizePolicy(sizePolicy);
-        centralwidget->setStyleSheet(QString::fromUtf8("background-color: rgb(213, 228, 255);\n"
-"border: none;"));
+        centralwidget->setStyleSheet(QString::fromUtf8("background-color: rgb(213, 228, 255);"));
         start = new QPushButton(centralwidget);
         start->setObjectName(QString::fromUtf8("start"));
         start->setGeometry(QRect(740, 510, 131, 32));
@@ -103,6 +102,15 @@ public:
         gridLayout_2 = new QGridLayout(gridLayoutWidget_4);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         gridLayout_2->setContentsMargins(0, 0, 0, 0);
+        label = new QLabel(gridLayoutWidget_4);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setFont(font);
+        label->setStyleSheet(QString::fromUtf8("color: rgb(27, 46, 79);\n"
+"font-size: 5.0em;\n"
+"font-family: 'Times New Roman', 14;"));
+
+        gridLayout_2->addWidget(label, 0, 0, 1, 1);
+
         size = new QLineEdit(gridLayoutWidget_4);
         size->setObjectName(QString::fromUtf8("size"));
         QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Ignored);
@@ -114,15 +122,6 @@ public:
 "border: 1.5px solid rgb(141, 156, 201);"));
 
         gridLayout_2->addWidget(size, 0, 1, 1, 1);
-
-        label = new QLabel(gridLayoutWidget_4);
-        label->setObjectName(QString::fromUtf8("label"));
-        label->setFont(font);
-        label->setStyleSheet(QString::fromUtf8("color: rgb(27, 46, 79);\n"
-"font-size: 5.0em;\n"
-"font-family: 'Times New Roman', 14;"));
-
-        gridLayout_2->addWidget(label, 0, 0, 1, 1);
 
         instruction = new QPushButton(centralwidget);
         instruction->setObjectName(QString::fromUtf8("instruction"));
@@ -294,7 +293,7 @@ public:
 #endif // QT_CONFIG(shortcut)
         actionSafe_solution_of_SOLE->setText(QCoreApplication::translate("MainWindow", "Safe solution of SOLE", nullptr));
         start->setText(QCoreApplication::translate("MainWindow", "Start!", nullptr));
-        label->setText(QCoreApplication::translate("MainWindow", "Array size:         ", nullptr));
+        label->setText(QCoreApplication::translate("MainWindow", "Array size:", nullptr));
         instruction->setText(QCoreApplication::translate("MainWindow", "Instruction", nullptr));
         m_Jacobi->setStyleSheet(QCoreApplication::translate("MainWindow", "color: rgb(27, 46, 79);\n"
 "font-size: 5.0em;\n"

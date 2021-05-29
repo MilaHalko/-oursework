@@ -6,25 +6,43 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>844</width>
+    <width>857</width>
     <height>604</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(213, 228, 255);</string>
+  </property>
   <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
     <rect>
      <x>730</x>
-     <y>20</y>
-     <width>101</width>
+     <y>10</y>
+     <width>118</width>
      <height>571</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QPushButton" name="pushButton">
+      <property name="font">
+       <font>
+        <family>Times New Roman</family>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(27, 46, 79);
+font-size: 5.0em;
+font-family: 'Times New Roman', 14;
+background-color: rgb(243, 255, 251);
+border: 1.5px solid rgb(141, 156, 201);</string>
+      </property>
       <property name="text">
        <string>Go back</string>
       </property>
@@ -45,8 +63,23 @@
     </item>
     <item>
      <widget class="QPushButton" name="pushButton_2">
+      <property name="font">
+       <font>
+        <family>Times New Roman</family>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(27, 46, 79);
+font-size: 5.0em;
+font-family: 'Times New Roman', 14;
+background-color: rgb(243, 255, 251);
+border: 1.5px solid rgb(141, 156, 201);</string>
+      </property>
       <property name="text">
-       <string>download</string>
+       <string>Safe solution</string>
       </property>
      </widget>
     </item>
@@ -99,6 +132,10 @@ font-family: 'Times New Roman', 14;</string>
         </item>
         <item>
          <widget class="QTableWidget" name="answer">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(243, 255, 251);
+border: 1.5px solid rgb(141, 156, 201);</string>
+          </property>
           <property name="verticalScrollBarPolicy">
            <enum>Qt::ScrollBarAlwaysOff</enum>
           </property>
