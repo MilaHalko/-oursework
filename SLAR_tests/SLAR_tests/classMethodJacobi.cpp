@@ -4,15 +4,19 @@ methodJacobi::methodJacobi(int size, float e, vector<vector<float>> &A, vector<f
 
 bool methodJacobi::Iteration(){
     printMatrix();
-    if (!DiagonalPrevails()  ||  determinant(size) == 0)
+    methodJacobi subMatrix(this->size, this->e, this->A, this->B);
+    det = subMatrix.determinant(size);
+    if (!DiagonalPrevails()  ||  det == 0)
         return false;
-    cout << "Determinant = " << determinant(size) << endl << endl;
+    cout << "Determinant = " << det << endl << endl;
     do {
         iterationCounter++;
         setOldX();
         for (int i = 0; i < size; i++)
             X[i] = getIterationResult(i);
         printIteration();
+        if (iterationCounter >= 1000)
+            return false;
     } while (countE() > e);
     return true;
 }

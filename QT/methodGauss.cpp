@@ -3,15 +3,20 @@
 methodGauss::methodGauss(int size, float e, vector<vector<float>> &A, vector<float> &B) : Matrix(size, e, A, B) {}
 
 bool methodGauss::Iteration(){
-    if (!DiagonalPrevails()  ||  determinant(size) == 0)
+    methodGauss subMatrix(this->size, this->e, this->A, this->B);
+    det = subMatrix.determinant(size);
+    if (!DiagonalPrevails()  ||  det == 0)
         return false;
-    answer << "Determinant = " << determinant(size) << endl << endl;
+    cout << "Determinant = " << det << endl << endl;
     do {
         iterationCounter++;
         setOldX();
-        for (int i = 0; i < size; i++)
+        for (int i = 0; i < size; i++) {
             X[i] = getIterationResult(i);
+        }
         printIteration();
+        if (iterationCounter >= 1000)
+            return false;
     } while (countE() > e);
     return true;
 }

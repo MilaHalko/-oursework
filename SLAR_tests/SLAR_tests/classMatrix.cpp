@@ -40,24 +40,28 @@ bool Matrix::DiagonalPrevails() {
 }
 
 
-float Matrix::determinant(int size) {
+double Matrix::determinant(int size) {
     float result;
     if (size > 2) {
-        for (int j = this->size - size + 1; j < this->size; j++) {
-            if (A[this->size - size][j] != 0) {
-                float sub = A[this->size - size][j] / A[this->size - size][this->size - size];
-                for (int i = this->size - size; i < this->size; i++) {
-                    A[i][j] -= sub * A[i][this->size - size];
+        for (int j = A.size() - size + 1; j < A.size(); j++) {
+            if (A[A.size() - size][j] != 0) {
+                float sub = A[A.size() - size][j] / A[A.size() - size][A.size() - size];
+                for (int i = A.size() - size; i < A.size(); i++) {
+                    A[i][j] -= sub * A[i][A.size() - size];
                 }
             }
+            else
+                return 0;
         }
-        result = A[this->size - size][this->size - size] * determinant(size - 1);
+        result = A[A.size() - size][A.size() - size] * determinant(size - 1);
     }
     else {
         if (size == 1)
             result = A[0][0];
-        else
-            result = A[this->size - size][this->size - size] * A[this->size - size + 1][this->size - size + 1] - A[this->size - size][this->size - size + 1] * A[this->size - size + 1][this->size - size];
+        else {
+            result = A[A.size() - size][A.size() - size] * A[A.size() - size + 1][A.size() - size + 1];
+            result -= A[A.size() - size][A.size() - size + 1] * A[A.size() - size + 1][A.size() - size];
+        }
     }
     return result;
 }
@@ -140,3 +144,5 @@ void Matrix::printX() {
     }
     cout << endl;
 }
+
+

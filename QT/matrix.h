@@ -22,12 +22,13 @@ protected:
     vector<float> X;
     vector<float> oldX;
     int iterationCounter;
+    double det;
 
     float countE();
     void setOldX();
     bool DiagonalPrevails();
     bool changeMatrix();
-    float determinant(int);
+    double determinant(int);
     bool SymmetryExists();
 
     Matrix(int, float, vector<vector<float>>&, vector<float>&);

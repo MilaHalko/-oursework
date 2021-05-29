@@ -4,9 +4,11 @@ methodGauss::methodGauss(int size, float e, vector<vector<float>> &A, vector<flo
 
 bool methodGauss::Iteration(){
     printMatrix();
-    if (!DiagonalPrevails()  ||  determinant(size) == 0)
+    methodGauss subMatrix(this->size, this->e, this->A, this->B);
+    det = subMatrix.determinant(size);
+    if (!DiagonalPrevails()  ||  det == 0)
         return false;
-    cout << "Determinant = " << determinant(size) << endl << endl;
+    cout << "Determinant = " << det << endl << endl;
     do {
         iterationCounter++;
         setOldX();
@@ -14,6 +16,8 @@ bool methodGauss::Iteration(){
             X[i] = getIterationResult(i);
         }
         printIteration();
+        if (iterationCounter >= 1000)
+            return false;
     } while (countE() > e);
     return true;
 }

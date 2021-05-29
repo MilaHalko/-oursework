@@ -82,6 +82,7 @@ void MainWindow::countSOLE() {
     if (ui->m_Gradient->isChecked()) {
         methodGradient matrix(size, e, A, B);
         result = matrix.Iteration();
+        matrix.getAnswer(answerSTR);
     }
     if (result == false)
         QMessageBox::critical(this, "SOLE answer:", "There is no solution!");
