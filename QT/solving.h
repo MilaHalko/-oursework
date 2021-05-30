@@ -17,15 +17,15 @@ class Solving : public QDialog
 public:
     explicit Solving(QWidget *parent = nullptr);
     ~Solving();
-    void ShowAnswer(QVector<QString> answerSTR);
-    void setAnswerSTR(QVector<QString>);
+    void ShowAnswer(QVector<QString> answerSTR);        // shows an answer ond solving of algorithm
+    void setAnswerSTR(QVector<QString>);                // put an answer from mainwindow and convert to attribute answerSTR
 
 private slots:
-    void on_pushButton_2_clicked();
+    void on_pushButton_2_clicked();                     // button "Safe solution"
 
 private:
-    Ui::Solving *ui;
-    QVector<QString> answerSTR;
+    Ui::Solving *ui;                                    // solving window
+    QVector<QString> answerSTR;                         // algorithm solving text
 };
 
 #endif // SOLVING_H

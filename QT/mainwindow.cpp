@@ -34,7 +34,7 @@ void MainWindow::on_generatingNums_clicked() {
                 if (i != j)
                     item = new QTableWidgetItem(QVariant(generateFloat(1)).toString());
                 else
-                    item = new QTableWidgetItem(QVariant(generateFloat(10)).toString());
+                    item = new QTableWidgetItem(QVariant(generateFloat(10 * ui->size->text().toUInt())).toString());
                 ui->A->setItem(i, j, item);
             }
         }
