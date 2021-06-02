@@ -9,7 +9,7 @@
 #include "checkinginput.h"
 #include "solving.h"
 #include "SOLEMethodsLibrary.h"
-#include "help.h"
+#include "helpwindow.h"
 
 
 QT_BEGIN_NAMESPACE
