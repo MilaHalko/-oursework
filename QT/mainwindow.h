@@ -9,7 +9,7 @@
 #include "checkinginput.h"
 #include "solving.h"
 #include "SOLEMethodsLibrary.h"
-#include "helpw.h"
+#include "helpwindow.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -26,32 +26,32 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-
 private slots:
 
-    void on_createArray_clicked();
+    void on_createArray_clicked();      // creates empty array m*m based on a size from field "Size"
 
-    void on_generatingNums_clicked();
+    void on_generatingNums_clicked();   // generates and put numbers to created array
 
-    void on_start_clicked();
+    void on_start_clicked();            // button "Start" returns a algorithm result or error message
 
-    void on_actionNew_SOLE_triggered();
+    void on_actionNew_SOLE_triggered(); // creates new main window and new project
 
-    void countSOLE();
+    void countSOLE();                   // count X using chosen algorithm
+
+    void on_instruction_clicked();      // opens instruction window
 
 
     //INPUT_CHECKING~~~~~~~~~~~~~~~~~~~
-    bool goodInt(QString);
-    bool goodFloat(QString);
-    bool goodMethod();
-    bool goodTable();
-
-
-    void on_instruction_clicked();
+    bool goodInt(QString);      // string checking for being int
+    bool goodAccuracy(QString); // string checking for being unsigned float using dot
+    bool goodFloat(QString);    // string checking for being float using dot
+    bool goodMethod();          // checks that 1 of 3 methods was chosen
+    bool goodTable();           // checks all array's field for being correct
 
 private:
-    Ui::MainWindow *ui;
-    MainWindow *nui;
-    Solving *window2;
+    Ui::MainWindow *ui;       // main window
+    MainWindow *nui;          // new main window (new project)
+    Solving *window2;         // window with algorithm solving
+    Checking check;
 };
 #endif // MAINWINDOW_H

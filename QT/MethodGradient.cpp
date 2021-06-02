@@ -1,6 +1,6 @@
-#include "methodGradient.h"
+#include "MethodGradient.h"
 
-methodGradient::methodGradient(int size, float e, vector<vector<float>> &A, vector<float> &B) : Matrix(size, e, A, B) {
+MethodGradient::MethodGradient(int size, float e, vector<vector<float>> &A, vector<float> &B) : Matrix(size, e, A, B) {
     r.resize(size);
     w1.resize(size);
     w2.resize(size);
@@ -11,31 +11,33 @@ methodGradient::methodGradient(int size, float e, vector<vector<float>> &A, vect
         insertMatrix[i].resize(size);
     }
 }
- methodGradient::~methodGradient() {
+ MethodGradient::~MethodGradient() {
      r.clear();
      w1.clear();
      w2.clear();
 }
 
-bool methodGradient::Iteration(){
-    methodGradient subMatrix(this->size, this->e, this->A, this->B);
+bool MethodGradient::Iteration(){
+    MethodGradient subMatrix(this->size, this->e, this->A, this->B);
     det = subMatrix.determinant(size);
-    inverteMatrix();
-    if (det == 0  ||  !DiagonalPrevails()  ||  !SymmetryExists())
+    if (det == 0) return false;
+    if(!DiagonalPrevails())
+        if(!changeMatrix())
+            return false;
+    if (!DiagonalPrevails() || !SymmetryExists())
         return false;
     answer << "Determinant = " << det << endl << endl;
+    inverteMatrix();
     do {
         iterationCounter++;
         setOldX();
         countX();
         printIteration();
-        if (iterationCounter >= 1000)
-            return false;
     } while (countE() > e);
     return true;
 }
 
-void methodGradient::countX() {
+void MethodGradient::countX() {
     u = 0;
     for (int i = 0; i < size; i++) {
         r[i] = 0;
@@ -100,7 +102,7 @@ void methodGradient::countX() {
         X[i] = oldX[i] - u * w1[i];
 }
 
-void methodGradient::printIteration(){
+void MethodGradient::printIteration(){
     answer << endl << "Old X:" << endl;
     printX();
     answer << "Iteration #" << iterationCounter << ":" << endl;
@@ -132,8 +134,8 @@ void methodGradient::printIteration(){
 }
 
 
-float methodGradient::countE() {
-    float maxR = r[0];
+float MethodGradient::countE() {
+    float maxR = abs(r[0]);
     for (int i = 1; i < size; i++)
         if (maxR < abs(r[i]))
             maxR = abs(r[i]);
@@ -141,11 +143,11 @@ float methodGradient::countE() {
 }
 
 
-void methodGradient::inverteMatrix() {
+void MethodGradient::inverteMatrix() {
     for (int i = 0; i < size; i++){
         for (int j = 0; j < size; j++){
             if (i <= j) {
-                methodGradient minor(size, e, A, B);
+                MethodGradient minor(size, e, A, B);
                 minor.deleteRowColumn(i, j);
                 minor.det = minor.determinant(minor.A.size());
                 insertMatrix[i][j] = minor.det * pow(-1, i + j + 2) / det;
@@ -162,7 +164,7 @@ void methodGradient::inverteMatrix() {
     }
 }
 
-void methodGradient::deleteRowColumn(int row, int column) {
+void MethodGradient::deleteRowColumn(int row, int column) {
     for (int i = row; i < size - 1; i++) {
         swap(A[i], A[i + 1]);
     }

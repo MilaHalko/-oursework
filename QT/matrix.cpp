@@ -34,25 +34,23 @@ bool Matrix::DiagonalPrevails() {
 
         if (diagonal < others) {
             answer << "Absolute value of the diagonal element [" << i << "; " << i << "] is smaller than absolute value of the sum of the other elements in this line!" << endl;
-            return changeMatrix();
+            return false;
         }
     }
     return true;
 }
 
 
-double Matrix::determinant(int size) {
-    float result;
+long double Matrix::determinant(int size) {
+    long double result;
     if (size > 2) {
         for (int j = A.size() - size + 1; j < A.size(); j++) {
             if (A[A.size() - size][j] != 0) {
-                float sub = A[A.size() - size][j] / A[A.size() - size][A.size() - size];
+                long double sub = A[A.size() - size][j] / A[A.size() - size][A.size() - size];
                 for (int i = A.size() - size; i < A.size(); i++) {
                     A[i][j] -= sub * A[i][A.size() - size];
                 }
             }
-            else
-                return 0;
         }
         result = A[A.size() - size][A.size() - size] * determinant(size - 1);
     }

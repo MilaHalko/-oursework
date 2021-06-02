@@ -10,6 +10,8 @@ int main() {
     
     vector<vector<float>> A {{17, 4, 3, 2}, {4, 20, 4, 3}, {3, 4, 25, -1}, {2, 3, -1, 9}};
     vector<float> B {5, 4, 3, 7};
+    swap(A[0], B);
+    
     
     //methodJacobi matrix(size, e, A, B);
     //if(!matrix.Iteration()) cout << "There is no solution!" << endl;

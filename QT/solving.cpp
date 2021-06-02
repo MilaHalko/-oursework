@@ -22,7 +22,7 @@ void Solving::ShowAnswer(QVector<QString> answerSRT) {
 
 void Solving::on_pushButton_2_clicked() {
     QString dir = QFileDialog::getExistingDirectory(this, tr("Open Directory"), "/Users/mila/Desktop", QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
-    fileName window;
+    FileName window;
     window.setModal(true);
     window.exec();
     QString filename = window.getFilename();

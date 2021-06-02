@@ -31,10 +31,14 @@ void MainWindow::on_generatingNums_clicked() {
         for (uint i = 0; i < ui->size->text().toInt(); i++) {
             for (uint j = 0; j <= ui->size->text().toInt(); j++) {
                 QTableWidgetItem *item;
-                if (i != j)
-                    item = new QTableWidgetItem(QVariant(generateFloat(1)).toString());
-                else
-                    item = new QTableWidgetItem(QVariant(generateFloat(10 * ui->size->text().toUInt())).toString());
+                if (i > j  &&  ui->m_Gradient->isChecked())
+                    item = new QTableWidgetItem((ui->A->item(j, i)->text()));
+                else {
+                    if (i != j)
+                        item = new QTableWidgetItem(QVariant(check.generateFloat(1)).toString());
+                    else
+                        item = new QTableWidgetItem(QVariant(check.generateFloat(10 * ui->size->text().toUInt())).toString());
+                }
                 ui->A->setItem(i, j, item);
             }
         }
@@ -44,7 +48,7 @@ void MainWindow::on_generatingNums_clicked() {
 }
 
 void MainWindow::on_start_clicked() {
-    if (!ui->size->text().isEmpty() && !ui->accuracy->text().isEmpty() && goodInt(ui->size->text()) && goodFloat(ui->accuracy->text()) && ui->A->rowCount() == ui->size->text().toInt() && goodMethod() && goodTable())
+    if (!ui->size->text().isEmpty() && !ui->accuracy->text().isEmpty() && goodInt(ui->size->text()) && goodAccuracy(ui->accuracy->text()) && ui->A->rowCount() == ui->size->text().toInt() && goodMethod() && goodTable())
         countSOLE();
     else
         QMessageBox::critical(this, "Error!", "Please check:\n1) you chose all options;\n2) your data is correct.\n\nIf you need help click button 'Instruction' on the previos window.");
@@ -70,17 +74,17 @@ void MainWindow::countSOLE() {
     answerSTR.resize(0);
 
     if (ui->m_Jacobi->isChecked()) {
-        methodJacobi matrix(size, e, A, B);
+        MethodJacobi matrix(size, e, A, B);
         result = matrix.Iteration();
         matrix.getAnswer(answerSTR);
     }
     if (ui->m_Gauss->isChecked()) {
-        methodGauss matrix(size, e, A, B);
+        MethodGauss matrix(size, e, A, B);
         result = matrix.Iteration();
         matrix.getAnswer(answerSTR);
     }
     if (ui->m_Gradient->isChecked()) {
-        methodGradient matrix(size, e, A, B);
+        MethodGradient matrix(size, e, A, B);
         result = matrix.Iteration();
         matrix.getAnswer(answerSTR);
     }
@@ -106,12 +110,17 @@ void MainWindow::on_actionNew_SOLE_triggered() {
 
 bool MainWindow::goodInt(QString qstr) {
     std::string str = (qstr.toUtf8().constData());
-    return CheckInt(str);
+    return check.CheckInt(str);
+}
+
+bool MainWindow::goodAccuracy(QString qstr) {
+    std::string str = (qstr.toUtf8().constData());
+    return check.CheckAccuracy(str);
 }
 
 bool MainWindow::goodFloat(QString qstr) {
     std::string str = (qstr.toUtf8().constData());
-    return CheckFloat(str);
+    return check.CheckFloat(str);
 }
 
 bool MainWindow::goodMethod() {
@@ -134,7 +143,7 @@ bool MainWindow::goodTable() {
 
 void MainWindow::on_instruction_clicked()
 {
-    helpW w;
+    HelpWindow w;
     w.setModal(true);
     w.exec();
 }

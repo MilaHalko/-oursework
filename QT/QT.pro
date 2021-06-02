@@ -9,27 +9,27 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    MethodGauss.cpp \
+    MethodGradient.cpp \
+    MethodJacobi.cpp \
     checkinginput.cpp \
     filename.cpp \
-    helpw.cpp \
+    helpwindow.cpp \
     main.cpp \
     mainwindow.cpp \
     matrix.cpp \
-    methodGauss.cpp \
-    methodGradient.cpp \
-    methodJacobi.cpp \
     solving.cpp
 
 HEADERS += \
+    MethodGauss.h \
+    MethodGradient.h \
+    MethodJacobi.h \
     SOLEMethodsLibrary.h \
     checkinginput.h \
     filename.h \
-    helpw.h \
+    helpwindow.h \
     mainwindow.h \
     matrix.h \
-    methodGauss.h \
-    methodGradient.h \
-    methodJacobi.h \
     solving.h
 
 FORMS += \

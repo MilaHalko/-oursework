@@ -1,16 +1,28 @@
 #include "checkinginput.h"
 
-bool CheckInt(string &str)
+bool Checking::CheckInt(string &str)
 {
-    for (int i = 0; i < str.size(); i++) {
-        if (str[0] == '0') return false;
+    if (str[0] == '0') return false;
+    for (int i = 0; i < str.size(); i++)
         if(!(isnumber(str[i])))
             return false;
-    }
     return true;
 }
 
-bool CheckFloat(string &str) {
+
+bool Checking::CheckAccuracy(string &str) {
+    int dot = str.find('.');
+    if (dot == 0  ||  str.find('.', dot + 1) != -1)
+        return false;
+
+    for (int i = 0; i < str.size(); i++)
+        if(!(isnumber(str[i])  ||  str[i] == '.'  ||  str[i] == '-'))
+            return false;
+    return true;
+}
+
+
+bool Checking::CheckFloat(string &str) {
     int minus = str.find('-');
     int dot = str.find('.');
     if (dot == 0  ||  str.find('.', dot + 1) != -1  ||  minus > 1)
@@ -22,7 +34,8 @@ bool CheckFloat(string &str) {
     return true;
 }
 
-float generateFloat(int i) {
-    float number = i * (rand() % 200 - 99);
+int Checking::generateFloat(int i) {
+    srand(time(0));
+    int number = i * (rand() % 200 - 99);
     return number;
 }

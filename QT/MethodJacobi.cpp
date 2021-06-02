@@ -1,12 +1,15 @@
-#include "methodJacobi.h"
+#include "MethodJacobi.h"
 
-methodJacobi::methodJacobi(int size, float e, vector<vector<float>> &A, vector<float> &B) : Matrix(size, e, A, B) {}
+MethodJacobi::MethodJacobi(int size, float e, vector<vector<float>> &A, vector<float> &B) : Matrix(size, e, A, B) {}
 
-bool methodJacobi::Iteration(){
-    methodJacobi subMatrix(this->size, this->e, this->A, this->B);
+bool MethodJacobi::Iteration(){
+    MethodJacobi subMatrix(this->size, this->e, this->A, this->B);
     det = subMatrix.determinant(size);
-    if (!DiagonalPrevails()  ||  det == 0)
-        return false;
+    if (det == 0) return false;
+    if(!DiagonalPrevails())
+        if(!changeMatrix())
+            return false;
+    if (!DiagonalPrevails()) return false;
     answer << "Determinant = " << det << endl << endl;
     do {
         iterationCounter++;
@@ -14,13 +17,11 @@ bool methodJacobi::Iteration(){
         for (int i = 0; i < size; i++)
             X[i] = getIterationResult(i);
         printIteration();
-        if (iterationCounter >= 1000)
-            return false;
     } while (countE() > e);
     return true;
 }
 
-float methodJacobi::getIterationResult(int i) {
+float MethodJacobi::getIterationResult(int i) {
     float result = 0;
     for (int j = 0; j < size; j++)
         if (i != j)
@@ -29,7 +30,7 @@ float methodJacobi::getIterationResult(int i) {
     return result;
 }
 
-void methodJacobi::printIteration() {
+void MethodJacobi::printIteration() {
     printX();
     answer << "Iteration #" << iterationCounter << ":" << endl;
     for (int i = 0; i < size; i++) {

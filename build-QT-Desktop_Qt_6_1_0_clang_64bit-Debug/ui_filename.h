@@ -31,7 +31,6 @@ public:
     QLineEdit *filename;
     QSpacerItem *verticalSpacer;
     QDialogButtonBox *buttonBox;
-    QDialogButtonBox *buttonBox_2;
 
     void setupUi(QDialog *fileName)
     {
@@ -78,11 +77,6 @@ public:
 
         verticalLayout->addWidget(buttonBox);
 
-        buttonBox_2 = new QDialogButtonBox(fileName);
-        buttonBox_2->setObjectName(QString::fromUtf8("buttonBox_2"));
-        buttonBox_2->setGeometry(QRect(0, 0, 361, 32));
-        buttonBox_2->setOrientation(Qt::Horizontal);
-        buttonBox_2->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
 
         retranslateUi(fileName);
         QObject::connect(buttonBox, &QDialogButtonBox::accepted, fileName, qOverload<>(&QDialog::accept));
@@ -100,7 +94,7 @@ public:
 };
 
 namespace Ui {
-    class fileName: public Ui_fileName {};
+    class FileName: public Ui_fileName {};
 } // namespace Ui
 
 QT_END_NAMESPACE

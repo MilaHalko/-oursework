@@ -1,21 +1,21 @@
 #include "filename.h"
 #include "ui_filename.h"
 
-fileName::fileName(QWidget *parent) :
+FileName::FileName(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::fileName)
+    ui(new Ui::FileName)
 {
     ui->setupUi(this);
 }
 
-fileName::~fileName()
+FileName::~FileName()
 {
     delete ui;
 }
 
-QString fileName::getFilename() {return filename;}
+QString FileName::getFilename() {return filename;}
 
-void fileName::on_buttonBox_accepted()
+void FileName::on_buttonBox_accepted()
 {
     if (!(ui->filename->text().isEmpty())) {
         filename = ui->filename->text();

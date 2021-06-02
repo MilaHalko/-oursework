@@ -52,31 +52,31 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../QT/checkinginput.cpp \
+SOURCES       = ../QT/MethodGauss.cpp \
+		../QT/MethodGradient.cpp \
+		../QT/MethodJacobi.cpp \
+		../QT/checkinginput.cpp \
 		../QT/filename.cpp \
-		../QT/helpw.cpp \
+		../QT/helpwindow.cpp \
 		../QT/main.cpp \
 		../QT/mainwindow.cpp \
 		../QT/matrix.cpp \
-		../QT/methodGauss.cpp \
-		../QT/methodGradient.cpp \
-		../QT/methodJacobi.cpp \
 		../QT/solving.cpp moc_filename.cpp \
-		moc_helpw.cpp \
+		moc_helpwindow.cpp \
 		moc_mainwindow.cpp \
 		moc_solving.cpp
-OBJECTS       = checkinginput.o \
+OBJECTS       = MethodGauss.o \
+		MethodGradient.o \
+		MethodJacobi.o \
+		checkinginput.o \
 		filename.o \
-		helpw.o \
+		helpwindow.o \
 		main.o \
 		mainwindow.o \
 		matrix.o \
-		methodGauss.o \
-		methodGradient.o \
-		methodJacobi.o \
 		solving.o \
 		moc_filename.o \
-		moc_helpw.o \
+		moc_helpwindow.o \
 		moc_mainwindow.o \
 		moc_solving.o
 DIST          = ../../../../Qt/6.1.0/clang_64/mkspecs/features/spec_pre.prf \
@@ -207,24 +207,24 @@ DIST          = ../../../../Qt/6.1.0/clang_64/mkspecs/features/spec_pre.prf \
 		../../../../Qt/6.1.0/clang_64/mkspecs/features/exceptions.prf \
 		../../../../Qt/6.1.0/clang_64/mkspecs/features/yacc.prf \
 		../../../../Qt/6.1.0/clang_64/mkspecs/features/lex.prf \
-		../QT/QT.pro ../QT/SOLEMethodsLibrary.h \
+		../QT/QT.pro ../QT/MethodGauss.h \
+		../QT/MethodGradient.h \
+		../QT/MethodJacobi.h \
+		../QT/SOLEMethodsLibrary.h \
 		../QT/checkinginput.h \
 		../QT/filename.h \
-		../QT/helpw.h \
+		../QT/helpwindow.h \
 		../QT/mainwindow.h \
 		../QT/matrix.h \
-		../QT/methodGauss.h \
-		../QT/methodGradient.h \
-		../QT/methodJacobi.h \
-		../QT/solving.h ../QT/checkinginput.cpp \
+		../QT/solving.h ../QT/MethodGauss.cpp \
+		../QT/MethodGradient.cpp \
+		../QT/MethodJacobi.cpp \
+		../QT/checkinginput.cpp \
 		../QT/filename.cpp \
-		../QT/helpw.cpp \
+		../QT/helpwindow.cpp \
 		../QT/main.cpp \
 		../QT/mainwindow.cpp \
 		../QT/matrix.cpp \
-		../QT/methodGauss.cpp \
-		../QT/methodGradient.cpp \
-		../QT/methodJacobi.cpp \
 		../QT/solving.cpp
 QMAKE_TARGET  = QT
 DESTDIR       = 
@@ -544,8 +544,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../../../../Qt/6.1.0/clang_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../QT/SOLEMethodsLibrary.h ../QT/checkinginput.h ../QT/filename.h ../QT/helpw.h ../QT/mainwindow.h ../QT/matrix.h ../QT/methodGauss.h ../QT/methodGradient.h ../QT/methodJacobi.h ../QT/solving.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../QT/checkinginput.cpp ../QT/filename.cpp ../QT/helpw.cpp ../QT/main.cpp ../QT/mainwindow.cpp ../QT/matrix.cpp ../QT/methodGauss.cpp ../QT/methodGradient.cpp ../QT/methodJacobi.cpp ../QT/solving.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../QT/MethodGauss.h ../QT/MethodGradient.h ../QT/MethodJacobi.h ../QT/SOLEMethodsLibrary.h ../QT/checkinginput.h ../QT/filename.h ../QT/helpwindow.h ../QT/mainwindow.h ../QT/matrix.h ../QT/solving.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../QT/MethodGauss.cpp ../QT/MethodGradient.cpp ../QT/MethodJacobi.cpp ../QT/checkinginput.cpp ../QT/filename.cpp ../QT/helpwindow.cpp ../QT/main.cpp ../QT/mainwindow.cpp ../QT/matrix.cpp ../QT/solving.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../QT/filename.ui ../QT/helpw.ui ../QT/mainwindow.ui ../QT/solving.ui $(DISTDIR)/
 
 
@@ -581,9 +581,9 @@ compiler_moc_predefs_clean:
 moc_predefs.h: ../../../../Qt/6.1.0/clang_64/mkspecs/features/data/dummy.cpp
 	/Library/Developer/CommandLineTools/usr/bin/clang++ -pipe -stdlib=libc++ -g -std=gnu++1z $(EXPORT_ARCH_ARGS) -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mmacosx-version-min=10.14 -Wall -Wextra -dM -E -o moc_predefs.h ../../../../Qt/6.1.0/clang_64/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_filename.cpp moc_helpw.cpp moc_mainwindow.cpp moc_solving.cpp
+compiler_moc_header_make_all: moc_filename.cpp moc_helpwindow.cpp moc_mainwindow.cpp moc_solving.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_filename.cpp moc_helpw.cpp moc_mainwindow.cpp moc_solving.cpp
+	-$(DEL_FILE) moc_filename.cpp moc_helpwindow.cpp moc_mainwindow.cpp moc_solving.cpp
 moc_filename.cpp: ../QT/filename.h \
 		../../../../Qt/6.1.0/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		../../../../Qt/6.1.0/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
@@ -593,14 +593,14 @@ moc_filename.cpp: ../QT/filename.h \
 		../../../../Qt/6.1.0/clang_64/libexec/moc
 	/Users/mila/Qt/6.1.0/clang_64/libexec/moc $(DEFINES) --include /Users/mila/Documents/Progs/Coursework/build-QT-Desktop_Qt_6_1_0_clang_64bit-Debug/moc_predefs.h -I/Users/mila/Qt/6.1.0/clang_64/mkspecs/macx-clang -I/Users/mila/Documents/Progs/Coursework/QT -I/Users/mila/Qt/6.1.0/clang_64/lib/QtWidgets.framework/Headers -I/Users/mila/Qt/6.1.0/clang_64/lib/QtGui.framework/Headers -I/Users/mila/Qt/6.1.0/clang_64/lib/QtCore.framework/Headers -I. -I/Library/Developer/CommandLineTools/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -I/Library/Developer/CommandLineTools/usr/include -F/Users/mila/Qt/6.1.0/clang_64/lib ../QT/filename.h -o moc_filename.cpp
 
-moc_helpw.cpp: ../QT/helpw.h \
+moc_helpwindow.cpp: ../QT/helpwindow.h \
 		../../../../Qt/6.1.0/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		../../../../Qt/6.1.0/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
 		../../../../Qt/6.1.0/clang_64/lib/QtGui.framework/Headers/QPixmap \
 		../../../../Qt/6.1.0/clang_64/lib/QtGui.framework/Headers/qpixmap.h \
 		moc_predefs.h \
 		../../../../Qt/6.1.0/clang_64/libexec/moc
-	/Users/mila/Qt/6.1.0/clang_64/libexec/moc $(DEFINES) --include /Users/mila/Documents/Progs/Coursework/build-QT-Desktop_Qt_6_1_0_clang_64bit-Debug/moc_predefs.h -I/Users/mila/Qt/6.1.0/clang_64/mkspecs/macx-clang -I/Users/mila/Documents/Progs/Coursework/QT -I/Users/mila/Qt/6.1.0/clang_64/lib/QtWidgets.framework/Headers -I/Users/mila/Qt/6.1.0/clang_64/lib/QtGui.framework/Headers -I/Users/mila/Qt/6.1.0/clang_64/lib/QtCore.framework/Headers -I. -I/Library/Developer/CommandLineTools/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -I/Library/Developer/CommandLineTools/usr/include -F/Users/mila/Qt/6.1.0/clang_64/lib ../QT/helpw.h -o moc_helpw.cpp
+	/Users/mila/Qt/6.1.0/clang_64/libexec/moc $(DEFINES) --include /Users/mila/Documents/Progs/Coursework/build-QT-Desktop_Qt_6_1_0_clang_64bit-Debug/moc_predefs.h -I/Users/mila/Qt/6.1.0/clang_64/mkspecs/macx-clang -I/Users/mila/Documents/Progs/Coursework/QT -I/Users/mila/Qt/6.1.0/clang_64/lib/QtWidgets.framework/Headers -I/Users/mila/Qt/6.1.0/clang_64/lib/QtGui.framework/Headers -I/Users/mila/Qt/6.1.0/clang_64/lib/QtCore.framework/Headers -I. -I/Library/Developer/CommandLineTools/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -I/Library/Developer/CommandLineTools/usr/include -F/Users/mila/Qt/6.1.0/clang_64/lib ../QT/helpwindow.h -o moc_helpwindow.cpp
 
 moc_mainwindow.cpp: ../QT/mainwindow.h \
 		../../../../Qt/6.1.0/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
@@ -628,7 +628,7 @@ moc_mainwindow.cpp: ../QT/mainwindow.h \
 		../../../../Qt/6.1.0/clang_64/lib/QtCore.framework/Headers/qvector.h \
 		../QT/methodGauss.h \
 		../QT/methodGradient.h \
-		../QT/helpw.h \
+		../QT/helpwindow.h \
 		../../../../Qt/6.1.0/clang_64/lib/QtGui.framework/Headers/QPixmap \
 		../../../../Qt/6.1.0/clang_64/lib/QtGui.framework/Headers/qpixmap.h \
 		moc_predefs.h \
@@ -684,6 +684,24 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 
 ####### Compile
 
+MethodGauss.o: ../QT/MethodGauss.cpp ../QT/MethodGauss.h \
+		../QT/matrix.h \
+		../../../../Qt/6.1.0/clang_64/lib/QtCore.framework/Headers/QVector \
+		../../../../Qt/6.1.0/clang_64/lib/QtCore.framework/Headers/qvector.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o MethodGauss.o ../QT/MethodGauss.cpp
+
+MethodGradient.o: ../QT/MethodGradient.cpp ../QT/MethodGradient.h \
+		../QT/matrix.h \
+		../../../../Qt/6.1.0/clang_64/lib/QtCore.framework/Headers/QVector \
+		../../../../Qt/6.1.0/clang_64/lib/QtCore.framework/Headers/qvector.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o MethodGradient.o ../QT/MethodGradient.cpp
+
+MethodJacobi.o: ../QT/MethodJacobi.cpp ../QT/MethodJacobi.h \
+		../QT/matrix.h \
+		../../../../Qt/6.1.0/clang_64/lib/QtCore.framework/Headers/QVector \
+		../../../../Qt/6.1.0/clang_64/lib/QtCore.framework/Headers/qvector.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o MethodJacobi.o ../QT/MethodJacobi.cpp
+
 checkinginput.o: ../QT/checkinginput.cpp ../QT/checkinginput.h \
 		../QT/mainwindow.h \
 		../../../../Qt/6.1.0/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
@@ -709,7 +727,7 @@ checkinginput.o: ../QT/checkinginput.cpp ../QT/checkinginput.h \
 		../../../../Qt/6.1.0/clang_64/lib/QtCore.framework/Headers/qvector.h \
 		../QT/methodGauss.h \
 		../QT/methodGradient.h \
-		../QT/helpw.h \
+		../QT/helpwindow.h \
 		../../../../Qt/6.1.0/clang_64/lib/QtGui.framework/Headers/QPixmap \
 		../../../../Qt/6.1.0/clang_64/lib/QtGui.framework/Headers/qpixmap.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o checkinginput.o ../QT/checkinginput.cpp
@@ -722,13 +740,13 @@ filename.o: ../QT/filename.cpp ../QT/filename.h \
 		ui_filename.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o filename.o ../QT/filename.cpp
 
-helpw.o: ../QT/helpw.cpp ../QT/helpw.h \
+helpwindow.o: ../QT/helpwindow.cpp ../QT/helpwindow.h \
 		../../../../Qt/6.1.0/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		../../../../Qt/6.1.0/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
 		../../../../Qt/6.1.0/clang_64/lib/QtGui.framework/Headers/QPixmap \
 		../../../../Qt/6.1.0/clang_64/lib/QtGui.framework/Headers/qpixmap.h \
 		ui_helpw.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o helpw.o ../QT/helpw.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o helpwindow.o ../QT/helpwindow.cpp
 
 main.o: ../QT/main.cpp ../QT/mainwindow.h \
 		../../../../Qt/6.1.0/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
@@ -755,7 +773,7 @@ main.o: ../QT/main.cpp ../QT/mainwindow.h \
 		../../../../Qt/6.1.0/clang_64/lib/QtCore.framework/Headers/qvector.h \
 		../QT/methodGauss.h \
 		../QT/methodGradient.h \
-		../QT/helpw.h \
+		../QT/helpwindow.h \
 		../../../../Qt/6.1.0/clang_64/lib/QtGui.framework/Headers/QPixmap \
 		../../../../Qt/6.1.0/clang_64/lib/QtGui.framework/Headers/qpixmap.h \
 		../../../../Qt/6.1.0/clang_64/lib/QtWidgets.framework/Headers/QApplication \
@@ -787,7 +805,7 @@ mainwindow.o: ../QT/mainwindow.cpp ../QT/mainwindow.h \
 		../../../../Qt/6.1.0/clang_64/lib/QtCore.framework/Headers/qvector.h \
 		../QT/methodGauss.h \
 		../QT/methodGradient.h \
-		../QT/helpw.h \
+		../QT/helpwindow.h \
 		../../../../Qt/6.1.0/clang_64/lib/QtGui.framework/Headers/QPixmap \
 		../../../../Qt/6.1.0/clang_64/lib/QtGui.framework/Headers/qpixmap.h \
 		ui_mainwindow.h
@@ -797,24 +815,6 @@ matrix.o: ../QT/matrix.cpp ../QT/matrix.h \
 		../../../../Qt/6.1.0/clang_64/lib/QtCore.framework/Headers/QVector \
 		../../../../Qt/6.1.0/clang_64/lib/QtCore.framework/Headers/qvector.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o matrix.o ../QT/matrix.cpp
-
-methodGauss.o: ../QT/methodGauss.cpp ../QT/methodGauss.h \
-		../QT/matrix.h \
-		../../../../Qt/6.1.0/clang_64/lib/QtCore.framework/Headers/QVector \
-		../../../../Qt/6.1.0/clang_64/lib/QtCore.framework/Headers/qvector.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o methodGauss.o ../QT/methodGauss.cpp
-
-methodGradient.o: ../QT/methodGradient.cpp ../QT/methodGradient.h \
-		../QT/matrix.h \
-		../../../../Qt/6.1.0/clang_64/lib/QtCore.framework/Headers/QVector \
-		../../../../Qt/6.1.0/clang_64/lib/QtCore.framework/Headers/qvector.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o methodGradient.o ../QT/methodGradient.cpp
-
-methodJacobi.o: ../QT/methodJacobi.cpp ../QT/methodJacobi.h \
-		../QT/matrix.h \
-		../../../../Qt/6.1.0/clang_64/lib/QtCore.framework/Headers/QVector \
-		../../../../Qt/6.1.0/clang_64/lib/QtCore.framework/Headers/qvector.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o methodJacobi.o ../QT/methodJacobi.cpp
 
 solving.o: ../QT/solving.cpp ../QT/solving.h \
 		../../../../Qt/6.1.0/clang_64/lib/QtWidgets.framework/Headers/QDialog \
@@ -832,8 +832,8 @@ solving.o: ../QT/solving.cpp ../QT/solving.h \
 moc_filename.o: moc_filename.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_filename.o moc_filename.cpp
 
-moc_helpw.o: moc_helpw.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_helpw.o moc_helpw.cpp
+moc_helpwindow.o: moc_helpwindow.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_helpwindow.o moc_helpwindow.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp

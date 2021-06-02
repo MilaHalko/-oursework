@@ -1,9 +1,12 @@
 #pragma once
 #include <string>
 #include <ctime>
-#include <mainwindow.h>
 using namespace std;
 
-bool CheckInt(string &str);
-bool CheckFloat(string &str);
-float generateFloat(int);
+class Checking {
+public:
+    bool CheckInt(string &str);     //string checking for being int
+    bool CheckAccuracy(string &str); // string checking for being unsigned float using dot
+    bool CheckFloat(string &str);   //string checking for being float using dot
+    int generateFloat(int);       //generates numbers for array
+};

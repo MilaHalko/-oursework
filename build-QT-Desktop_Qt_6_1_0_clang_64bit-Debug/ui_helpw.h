@@ -265,7 +265,7 @@ public:
 };
 
 namespace Ui {
-    class helpW: public Ui_helpW {};
+    class HelpWindow: public Ui_helpW {};
 } // namespace Ui
 
 QT_END_NAMESPACE
