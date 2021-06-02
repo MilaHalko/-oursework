@@ -1,7 +1,7 @@
-#include "helpw.h"
-#include "ui_helpw.h"
+#include "helpwindow.h"
+#include "ui_helpWindow.h"
 
-helpW::helpW(QWidget *parent) : QDialog(parent), ui(new Ui::helpW)
+HelpWindow::HelpWindow(QWidget *parent) : QDialog(parent), ui(new Ui::HelpWindow)
 {
     ui->setupUi(this);
 
@@ -11,7 +11,7 @@ helpW::helpW(QWidget *parent) : QDialog(parent), ui(new Ui::helpW)
     ui->mainPict->setPixmap(pix.scaled(w, h, Qt::KeepAspectRatio));
 }
 
-helpW::~helpW()
+HelpWindow::~HelpWindow()
 {
     delete ui;
 }

@@ -49,7 +49,7 @@ void MainWindow::on_generatingNums_clicked() {
 
 void MainWindow::on_start_clicked() {
     if (!ui->size->text().isEmpty() && !ui->accuracy->text().isEmpty() && goodInt(ui->size->text()) && goodAccuracy(ui->accuracy->text()) && ui->A->rowCount() == ui->size->text().toInt() && goodMethod() && goodTable())
-        countSOLE();
+            countSOLE();
     else
         QMessageBox::critical(this, "Error!", "Please check:\n1) you chose all options;\n2) your data is correct.\n\nIf you need help click button 'Instruction' on the previos window.");
 }
@@ -130,8 +130,8 @@ bool MainWindow::goodMethod() {
 bool MainWindow::goodTable() {
     for (int i = 0; i < ui->size->text().toInt(); i++ )
         for (int j = 0; j <= ui->size->text().toInt(); j++)
-            if (ui->A->item(i, i)->text().isEmpty())
-                return false;
+            if (ui->A->item(i, j)->text().isEmpty())
+               return false;
             else
                 if (!goodFloat(ui->A->item(i, j)->text()))
                     return false;

@@ -1,23 +1,23 @@
-#ifndef HELPW_H
-#define HELPW_H
+#ifndef HELP_H
+#define HELP_H
 
 #include <QDialog>
 #include <QPixmap>
 
 namespace Ui {
-class helpW;
+class HelpWindow;
 }
 
-class helpW : public QDialog
+class HelpWindow : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit helpW(QWidget *parent = nullptr);
-    ~helpW();
+    explicit HelpWindow(QWidget *parent = nullptr);
+    ~HelpWindow();
 
 private:
-    Ui::helpW *ui;
+    Ui::HelpWindow *ui;      // help window
 };
 
-#endif // HELPW_H
+#endif // HELP_H

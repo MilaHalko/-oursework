@@ -35,7 +35,6 @@ bool Checking::CheckFloat(string &str) {
 }
 
 int Checking::generateFloat(int i) {
-    srand(time(0));
     int number = i * (rand() % 200 - 99);
     return number;
 }

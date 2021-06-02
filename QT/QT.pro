@@ -34,7 +34,7 @@ HEADERS += \
 
 FORMS += \
     filename.ui \
-    helpw.ui \
+    helpwindow.ui \
     mainwindow.ui \
     solving.ui
 

@@ -33,12 +33,10 @@ public:
     QLabel *label_3;
     QLabel *label_9;
     QLabel *label_5;
-    QLabel *label_13;
     QLabel *label_7;
     QLabel *label_8;
     QLabel *label_10;
     QLabel *label_11;
-    QLabel *label_12;
     QWidget *verticalLayoutWidget;
     QHBoxLayout *horizontalLayout;
     QLabel *label_14;
@@ -73,7 +71,7 @@ public:
 "border: 1.5px solid rgb(141, 156, 201);"));
         label_4 = new QLabel(helpW);
         label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setGeometry(QRect(50, 70, 301, 16));
+        label_4->setGeometry(QRect(50, 70, 311, 16));
         QFont font1;
         font1.setFamilies({QString::fromUtf8("Times New Roman")});
         font1.setPointSize(14);
@@ -110,7 +108,7 @@ public:
         label_2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
         verticalLayoutWidget_3 = new QWidget(helpW);
         verticalLayoutWidget_3->setObjectName(QString::fromUtf8("verticalLayoutWidget_3"));
-        verticalLayoutWidget_3->setGeometry(QRect(10, 170, 353, 90));
+        verticalLayoutWidget_3->setGeometry(QRect(10, 180, 361, 71));
         verticalLayout_2 = new QVBoxLayout(verticalLayoutWidget_3);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
@@ -143,15 +141,6 @@ public:
 
         verticalLayout_2->addWidget(label_5);
 
-        label_13 = new QLabel(verticalLayoutWidget_3);
-        label_13->setObjectName(QString::fromUtf8("label_13"));
-        label_13->setFont(font1);
-        label_13->setStyleSheet(QString::fromUtf8("color: rgb(27, 46, 79);\n"
-"font-size: 5.0em;\n"
-"font-family: 'Times New Roman', 14;"));
-
-        verticalLayout_2->addWidget(label_13);
-
         label_7 = new QLabel(helpW);
         label_7->setObjectName(QString::fromUtf8("label_7"));
         label_7->setGeometry(QRect(10, 290, 51, 16));
@@ -170,7 +159,7 @@ public:
         label_8->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
         label_10 = new QLabel(helpW);
         label_10->setObjectName(QString::fromUtf8("label_10"));
-        label_10->setGeometry(QRect(10, 340, 61, 16));
+        label_10->setGeometry(QRect(10, 350, 61, 16));
         label_10->setFont(font);
         label_10->setStyleSheet(QString::fromUtf8("color: rgb(27, 46, 79);\n"
 "font-size: 5.0em;\n"
@@ -178,26 +167,15 @@ public:
         label_10->setAlignment(Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft);
         label_11 = new QLabel(helpW);
         label_11->setObjectName(QString::fromUtf8("label_11"));
-        label_11->setGeometry(QRect(80, 340, 261, 20));
+        label_11->setGeometry(QRect(80, 350, 261, 20));
         label_11->setFont(font1);
         label_11->setStyleSheet(QString::fromUtf8("color: rgb(27, 46, 79);\n"
 "font-size: 5.0em;\n"
 "font-family: 'Times New Roman', 14;"));
         label_11->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
-        label_12 = new QLabel(helpW);
-        label_12->setObjectName(QString::fromUtf8("label_12"));
-        label_12->setGeometry(QRect(10, 360, 171, 16));
-        QFont font2;
-        font2.setFamilies({QString::fromUtf8("Times New Roman")});
-        font2.setPointSize(14);
-        font2.setItalic(true);
-        label_12->setFont(font2);
-        label_12->setStyleSheet(QString::fromUtf8("color: rgb(27, 46, 79);\n"
-"font-size: 5.0em;\n"
-"font-family: 'Times New Roman', 14;"));
         verticalLayoutWidget = new QWidget(helpW);
         verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(10, 420, 492, 18));
+        verticalLayoutWidget->setGeometry(QRect(10, 420, 586, 18));
         horizontalLayout = new QHBoxLayout(verticalLayoutWidget);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
@@ -212,6 +190,10 @@ public:
 
         label_15 = new QLabel(verticalLayoutWidget);
         label_15->setObjectName(QString::fromUtf8("label_15"));
+        QFont font2;
+        font2.setFamilies({QString::fromUtf8("Times New Roman")});
+        font2.setPointSize(14);
+        font2.setItalic(true);
         label_15->setFont(font2);
         label_15->setStyleSheet(QString::fromUtf8("color: rgb(27, 46, 79);\n"
 "font-size: 5.0em;\n"
@@ -244,28 +226,26 @@ public:
         helpW->setWindowTitle(QCoreApplication::translate("helpW", "Form", nullptr));
         mainPict->setText(QString());
         pushButton->setText(QCoreApplication::translate("helpW", "Go back", nullptr));
-        label_4->setText(QCoreApplication::translate("helpW", "only numbers. 0 is not correct also.", nullptr));
-        label_6->setText(QCoreApplication::translate("helpW", "clicable after correct size input.", nullptr));
+        label_4->setText(QCoreApplication::translate("helpW", "write only numbers. Size 0 is not correct.", nullptr));
+        label_6->setText(QCoreApplication::translate("helpW", "click after correct size input.", nullptr));
         label->setText(QCoreApplication::translate("helpW", "Size: ", nullptr));
         label_2->setText(QCoreApplication::translate("helpW", "Create array:", nullptr));
         label_3->setText(QCoreApplication::translate("helpW", "Generate numbers: ", nullptr));
-        label_9->setText(QCoreApplication::translate("helpW", "clicked \"Create array\" button. Array size in table and size ", nullptr));
-        label_5->setText(QCoreApplication::translate("helpW", "clicable after correct size input and from \"Size\" must be ", nullptr));
-        label_13->setText(QCoreApplication::translate("helpW", "equal.", nullptr));
+        label_9->setText(QCoreApplication::translate("helpW", "click after table creating using \"Create array\" button. Also,", nullptr));
+        label_5->setText(QCoreApplication::translate("helpW", " table size and size from field \"Size\" must be equal.", nullptr));
         label_7->setText(QCoreApplication::translate("helpW", "Choose:", nullptr));
-        label_8->setText(QCoreApplication::translate("helpW", "one of 3 methods must be chosen.", nullptr));
+        label_8->setText(QCoreApplication::translate("helpW", "choose one of 3 methods.", nullptr));
         label_10->setText(QCoreApplication::translate("helpW", "Accuracy:", nullptr));
-        label_11->setText(QCoreApplication::translate("helpW", "data as from \"Size\", but can be not an integer.", nullptr));
-        label_12->setText(QCoreApplication::translate("helpW", "Use a dot instead of coma.", nullptr));
+        label_11->setText(QCoreApplication::translate("helpW", "write float positive number using a dot.", nullptr));
         label_14->setText(QCoreApplication::translate("helpW", "Array:", nullptr));
-        label_15->setText(QCoreApplication::translate("helpW", "don\342\200\231t leave the fields empty; use dot instead of coma if you need float number.", nullptr));
+        label_15->setText(QCoreApplication::translate("helpW", "don\342\200\231t leave the fields empty, write numbers. Use a dot instead of coma if you need float number.", nullptr));
         label_16->setText(QCoreApplication::translate("helpW", "Rules", nullptr));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class HelpWindow: public Ui_helpW {};
+    class helpW: public Ui_helpW {};
 } // namespace Ui
 
 QT_END_NAMESPACE

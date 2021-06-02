@@ -1,5 +1,5 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'solving.h'
+** Meta object code from reading C++ file 'filename.h'
 **
 ** Created by: The Qt Meta Object Compiler version 68 (Qt 6.1.0)
 **
@@ -7,11 +7,11 @@
 *****************************************************************************/
 
 #include <memory>
-#include "../QT/solving.h"
+#include "../QT/filename.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'solving.h' doesn't include <QObject>."
+#error "The header file 'filename.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 68
 #error "This file was generated using the moc from 6.1.0. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -21,24 +21,24 @@
 QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
-struct qt_meta_stringdata_Solving_t {
+struct qt_meta_stringdata_FileName_t {
     const uint offsetsAndSize[6];
-    char stringdata0[33];
+    char stringdata0[32];
 };
 #define QT_MOC_LITERAL(ofs, len) \
-    uint(offsetof(qt_meta_stringdata_Solving_t, stringdata0) + ofs), len 
-static const qt_meta_stringdata_Solving_t qt_meta_stringdata_Solving = {
+    uint(offsetof(qt_meta_stringdata_FileName_t, stringdata0) + ofs), len 
+static const qt_meta_stringdata_FileName_t qt_meta_stringdata_FileName = {
     {
-QT_MOC_LITERAL(0, 7), // "Solving"
-QT_MOC_LITERAL(8, 23), // "on_pushButton_2_clicked"
-QT_MOC_LITERAL(32, 0) // ""
+QT_MOC_LITERAL(0, 8), // "FileName"
+QT_MOC_LITERAL(9, 21), // "on_buttonBox_accepted"
+QT_MOC_LITERAL(31, 0) // ""
 
     },
-    "Solving\0on_pushButton_2_clicked\0"
+    "FileName\0on_buttonBox_accepted\0"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_Solving[] = {
+static const uint qt_meta_data_FileName[] = {
 
  // content:
        9,       // revision
@@ -60,26 +60,26 @@ static const uint qt_meta_data_Solving[] = {
        0        // eod
 };
 
-void Solving::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void FileName::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
-        auto *_t = static_cast<Solving *>(_o);
+        auto *_t = static_cast<FileName *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->on_pushButton_2_clicked(); break;
+        case 0: _t->on_buttonBox_accepted(); break;
         default: ;
         }
     }
     (void)_a;
 }
 
-const QMetaObject Solving::staticMetaObject = { {
+const QMetaObject FileName::staticMetaObject = { {
     QMetaObject::SuperData::link<QDialog::staticMetaObject>(),
-    qt_meta_stringdata_Solving.offsetsAndSize,
-    qt_meta_data_Solving,
+    qt_meta_stringdata_FileName.offsetsAndSize,
+    qt_meta_data_FileName,
     qt_static_metacall,
     nullptr,
-qt_incomplete_metaTypeArray<qt_meta_stringdata_Solving_t
+qt_incomplete_metaTypeArray<qt_meta_stringdata_FileName_t
 
 , QtPrivate::TypeAndForceComplete<void, std::false_type>
 
@@ -89,20 +89,20 @@ qt_incomplete_metaTypeArray<qt_meta_stringdata_Solving_t
 } };
 
 
-const QMetaObject *Solving::metaObject() const
+const QMetaObject *FileName::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *Solving::qt_metacast(const char *_clname)
+void *FileName::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_Solving.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_FileName.stringdata0))
         return static_cast<void*>(this);
     return QDialog::qt_metacast(_clname);
 }
 
-int Solving::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int FileName::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QDialog::qt_metacall(_c, _id, _a);
     if (_id < 0)
