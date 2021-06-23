@@ -10,13 +10,15 @@ Solving::~Solving() {
     delete ui;
 }
 
-void Solving::ShowAnswer(QVector<QString> answerSRT) {
+void Solving::ShowAnswer() {
     ui->answer->setColumnCount(1);
-    ui->answer->setRowCount(answerSRT.size());
+    ui->answer->setRowCount(answerSTR.size());
 
-    for (int i = 0; i < answerSRT.size(); i++) {
-        QTableWidgetItem *item = new QTableWidgetItem(answerSRT[i]);
+    for (int i = 0; i < answerSTR.size(); i++) {
+        QTableWidgetItem *item = new QTableWidgetItem(answerSTR[i]);
+
         ui->answer->setItem(i, 1, item);
+
     }
 }
 
@@ -38,7 +40,34 @@ void Solving::on_pushButton_2_clicked() {
 }
 
 void Solving::setAnswerSTR(QVector<QString> answerSTR) {
-    this->answerSTR.resize(answerSTR.size());
+    this->answerSTR.resize(answerSTR.size() + 1);
     for (int i = 0; i < answerSTR.size(); i++)
-        this->answerSTR[i] = answerSTR[i] + "\n";
+        this->answerSTR[i] = answerSTR[i];
 }
+
+void Solving::setABSize(vector<vector<long double>> A, vector<long double> B, int size) {
+    this->size = size;
+    this->A.resize(size);
+    this->B.resize(size);
+
+    for (int i = 0; i < size; i++) {
+        this->A[i].resize(size);
+        this->B[i] = B[i];
+        for (int j = 0; j < size; j++) {
+            this->A[i][j] = A[i][j];
+        }
+    }
+}
+
+void Solving::on_pushButton_3_clicked()
+{
+    if(B.size() == 2) {
+        Graphic graphWin;
+        graphWin.setModal(true);
+        graphWin.showGraph(A, B);
+    }
+    else {
+        QMessageBox::critical(this, "Error!", "This function is evailable for systems which size is 2");
+    }
+}
+

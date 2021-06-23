@@ -44,6 +44,7 @@ public:
     QLabel *label_11;
     QLabel *label_8;
     QPushButton *pushButton_2;
+    QLabel *label_17;
 
     void setupUi(QDialog *HelpWindow)
     {
@@ -65,7 +66,7 @@ public:
 "font-family: 'Times New Roman', 14;"));
         verticalLayoutWidget = new QWidget(HelpWindow);
         verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(10, 420, 598, 18));
+        verticalLayoutWidget->setGeometry(QRect(10, 400, 401, 18));
         horizontalLayout = new QHBoxLayout(verticalLayoutWidget);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
@@ -202,7 +203,7 @@ public:
 "font-family: 'Times New Roman', 14;"));
         label_11 = new QLabel(HelpWindow);
         label_11->setObjectName(QString::fromUtf8("label_11"));
-        label_11->setGeometry(QRect(80, 350, 261, 20));
+        label_11->setGeometry(QRect(80, 350, 321, 20));
         label_11->setFont(font);
         label_11->setStyleSheet(QString::fromUtf8("color: rgb(27, 46, 79);\n"
 "font-size: 5.0em;\n"
@@ -228,6 +229,13 @@ public:
 "font-family: 'Times New Roman', 14;\n"
 "background-color: rgb(243, 255, 251);\n"
 "border: 1.5px solid rgb(141, 156, 201);"));
+        label_17 = new QLabel(HelpWindow);
+        label_17->setObjectName(QString::fromUtf8("label_17"));
+        label_17->setGeometry(QRect(10, 430, 581, 16));
+        label_17->setFont(font2);
+        label_17->setStyleSheet(QString::fromUtf8("color: rgb(27, 46, 79);\n"
+"font-size: 5.0em;\n"
+"font-family: 'Times New Roman', 14;"));
 
         retranslateUi(HelpWindow);
         QObject::connect(pushButton_2, &QPushButton::clicked, HelpWindow, qOverload<>(&QDialog::close));
@@ -240,7 +248,7 @@ public:
         HelpWindow->setWindowTitle(QCoreApplication::translate("HelpWindow", "Dialog", nullptr));
         label_6->setText(QCoreApplication::translate("HelpWindow", "click after correct size input.", nullptr));
         label_14->setText(QCoreApplication::translate("HelpWindow", "Array:", nullptr));
-        label_15->setText(QCoreApplication::translate("HelpWindow", "don\342\200\231t leave the fields empty, write numbers. Use a dot instead of coma if you need float number.", nullptr));
+        label_15->setText(QCoreApplication::translate("HelpWindow", "don\342\200\231t leave the fields empty, write numbers. Use a dot instead ", nullptr));
         label_10->setText(QCoreApplication::translate("HelpWindow", "Accuracy:", nullptr));
         label_3->setText(QCoreApplication::translate("HelpWindow", "Generate numbers: ", nullptr));
         label_9->setText(QCoreApplication::translate("HelpWindow", "click after table creating using \"Create array\" button. Also,", nullptr));
@@ -250,11 +258,12 @@ public:
         label_2->setText(QCoreApplication::translate("HelpWindow", "Create array:", nullptr));
         mainPict->setText(QString());
         pushButton->setText(QCoreApplication::translate("HelpWindow", "Go back", nullptr));
-        label_4->setText(QCoreApplication::translate("HelpWindow", "write only numbers. Size 0 is not correct.", nullptr));
+        label_4->setText(QCoreApplication::translate("HelpWindow", "write only numbers. Size can be from 2 to 50.", nullptr));
         label_16->setText(QCoreApplication::translate("HelpWindow", "Rules", nullptr));
-        label_11->setText(QCoreApplication::translate("HelpWindow", "write float positive number using a dot.", nullptr));
+        label_11->setText(QCoreApplication::translate("HelpWindow", "write float positive number using a dot. (0.0.. -  0.00001)", nullptr));
         label_8->setText(QCoreApplication::translate("HelpWindow", "choose one of 3 methods.", nullptr));
         pushButton_2->setText(QCoreApplication::translate("HelpWindow", "Go Back", nullptr));
+        label_17->setText(QCoreApplication::translate("HelpWindow", "of coma if you need float number. Numbers can be from -999 to 999, remain is not less than 0.00001.", nullptr));
     } // retranslateUi
 
 };

@@ -2,10 +2,10 @@
 #include "matrix.h"
 
 class MethodGauss : public Matrix {
-    float getIterationResult(int);  // X[i] counting
+    long double getIterationResult(int);  // X[i] counting
     void printIteration();          // ofstream answer data
 public:
-    MethodGauss (int, float, vector<vector<float>>&, vector<float>&);
+    MethodGauss (int, long double, vector<vector<long double>>&, vector<long double>&);
 
-    bool Iteration();               // count X using Gauss algorithm
+    string Iteration();               // count X using Gauss algorithm
 };

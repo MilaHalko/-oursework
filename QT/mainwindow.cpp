@@ -28,8 +28,8 @@ void MainWindow::on_createArray_clicked() {
 
 void MainWindow::on_generatingNums_clicked() {
     if (!ui->size->text().isEmpty()  &&  ui->A->rowCount() == ui->size->text().toInt()) {
-        for (uint i = 0; i < ui->size->text().toInt(); i++) {
-            for (uint j = 0; j <= ui->size->text().toInt(); j++) {
+        for (int i = 0; i < ui->size->text().toInt(); i++) {
+            for (int j = 0; j <= ui->size->text().toInt(); j++) {
                 QTableWidgetItem *item;
                 if (i > j  &&  ui->m_Gradient->isChecked())
                     item = new QTableWidgetItem((ui->A->item(j, i)->text()));
@@ -56,20 +56,18 @@ void MainWindow::on_start_clicked() {
 
 void MainWindow::countSOLE() {
     int size = ui->size->text().toInt();
-    float e = ui->accuracy->text().toFloat();
-    vector<vector<float>> A (ui->size->text().toInt());
-    vector<float> B (ui->size->text().toInt());
+    long double e = ui->accuracy->text().toLong();
+    vector<vector<long double>> A (ui->size->text().toInt());
+    vector<long double> B (ui->size->text().toInt());
 
-    for (int i = 0; i < ui->size->text().toUInt(); i++) {
+    for (int i = 0; i < ui->size->text().toInt(); i++) {
         A[i].resize(ui->size->text().toInt());
-        for (int j = 0; j < ui->size->text().toUInt(); j++)
-            A[i][j] = ui->A->item(i, j)->text().toInt();
-    }
+        for (int j = 0; j < ui->size->text().toInt(); j++)
+            A[i][j] = ui->A->item(i, j)->text().toFloat();
+        B[i] = ui->A->item(i,ui->size->text().toInt())->text().toFloat();
+    }   
 
-    for (int i = 0; i < ui->size->text().toInt(); i++)
-        B[i] = ui->A->item(i,ui->size->text().toInt())->text().toInt();
-
-    bool result = false;
+    string result = "";
     QVector<QString> answerSTR;
     answerSTR.resize(0);
 
@@ -88,13 +86,16 @@ void MainWindow::countSOLE() {
         result = matrix.Iteration();
         matrix.getAnswer(answerSTR);
     }
-    if (result == false)
-        QMessageBox::critical(this, "SOLE answer:", "There is no solution!");
+    if (result != "1") {
+        QString resultQ = QString::fromStdString(result);
+        QMessageBox::critical(this, "SOLE answer:", resultQ);
+    }
     else {
         Solving window2;
         window2.setAnswerSTR(answerSTR);
+        window2.setABSize(A,B, size);
         window2.setModal(true);
-        window2.ShowAnswer(answerSTR);
+        window2.ShowAnswer();
         window2.exec();
     }
 }
@@ -103,6 +104,13 @@ void MainWindow::on_actionNew_SOLE_triggered() {
     hide();
     nui = new MainWindow;
     nui->show();
+}
+
+void MainWindow::on_instruction_clicked()
+{
+    HelpWindow w;
+    w.setModal(true);
+    w.exec();
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -114,6 +122,7 @@ bool MainWindow::goodInt(QString qstr) {
 }
 
 bool MainWindow::goodAccuracy(QString qstr) {
+    if (qstr.size() >= 10) return false;
     std::string str = (qstr.toUtf8().constData());
     return check.CheckAccuracy(str);
 }
@@ -129,22 +138,12 @@ bool MainWindow::goodMethod() {
 
 bool MainWindow::goodTable() {
     for (int i = 0; i < ui->size->text().toInt(); i++ )
-        for (int j = 0; j <= ui->size->text().toInt(); j++)
-            if (ui->A->item(i, j)->text().isEmpty())
-               return false;
-            else
-                if (!goodFloat(ui->A->item(i, j)->text()))
-                    return false;
+        for (int j = 0; j <= ui->size->text().toInt(); j++) {
+            if (!ui->A->item(i, j)  ||  ui->A->item(i, j)->text().isEmpty())
+                return false;
+            if (!goodFloat(ui->A->item(i, j)->text()))
+                return false;
+        }
     return true;
-}
-
-
-
-
-void MainWindow::on_instruction_clicked()
-{
-    HelpWindow w;
-    w.setModal(true);
-    w.exec();
 }
 

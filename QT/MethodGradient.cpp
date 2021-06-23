@@ -1,6 +1,6 @@
 #include "MethodGradient.h"
 
-MethodGradient::MethodGradient(int size, float e, vector<vector<float>> &A, vector<float> &B) : Matrix(size, e, A, B) {
+MethodGradient::MethodGradient(int size, long double e, vector<vector<long double>> &A, vector<long double> &B) : Matrix(size, e, A, B) {
     r.resize(size);
     w1.resize(size);
     w2.resize(size);
@@ -17,27 +17,29 @@ MethodGradient::MethodGradient(int size, float e, vector<vector<float>> &A, vect
      w2.clear();
 }
 
-bool MethodGradient::Iteration(){
+string MethodGradient::Iteration(){
     MethodGradient subMatrix(this->size, this->e, this->A, this->B);
     det = subMatrix.determinant(size);
-    if (det == 0) return false;
+    if (det == 0  ||  isnan(det)) return "The determinant is 0 or NAN";
     if(!DiagonalPrevails())
         if(!changeMatrix())
-            return false;
-    if (!DiagonalPrevails() || !SymmetryExists())
-        return false;
-    answer << "Determinant = " << det << endl << endl;
-    inverteMatrix();
+            return "Diagonal elements are not prevailing";
+    if (!DiagonalPrevails()) return "Diagonal elements are not prevailing";
+    if (!SymmetryExists()) return "Matrix is not symmetrical";
+    if (!inverteMatrix()) return "It is not available to inverse matrix because of NAN numbers";
+
     do {
         iterationCounter++;
         setOldX();
-        countX();
+        if (!countX()){
+            break;
+        }
         printIteration();
     } while (countE() > e);
-    return true;
+    return "1";
 }
 
-void MethodGradient::countX() {
+bool MethodGradient::countX() {
     u = 0;
     for (int i = 0; i < size; i++) {
         r[i] = 0;
@@ -54,6 +56,10 @@ void MethodGradient::countX() {
             r[i] += A[i][j] * oldX[j];
         }
         r[i] -= B[i];
+        if (isnan(r[i])) {
+            answer << "There are can not be more iterations because of NAN numbers" << endl;
+            return false;
+        }
         answer << " - " << B[i] << " = " << r[i] << endl;
     }
 
@@ -64,6 +70,10 @@ void MethodGradient::countX() {
                 answer << " + ";
             w1[i] += insertMatrix[i][j] * r[j];
             answer << insertMatrix[i][j] << " * " << r[j];
+        }
+        if (isnan(w1[i]))  {
+            answer << "There are can not be more iterations because of NAN numbers" << endl;
+            return false;
         }
         answer << " = " << w1[i] << endl;
     }
@@ -76,12 +86,16 @@ void MethodGradient::countX() {
             w2[i] += A[i][j] * w1[j];
             answer << A[i][j] << " * " << w1[j];
         }
+        if (isnan(w2[i])) {
+            answer << "There are can not be more iterations because of NAN numbers" << endl;
+            return false;
+        }
         answer << " = " << w2[i] << endl;
     }
     answer << "u = (r, AAr) / (AAr, AAr)" << endl;
     answer << "u = (";
-    double number1 = 0;
-    double number2 = 0;
+    long double number1 = 0;
+    long double number2 = 0;
     for (int i = 0; i < size; i++) {
         if (i != 0)
             answer << " + ";
@@ -98,8 +112,14 @@ void MethodGradient::countX() {
     u = number1 / number2;
     answer << ") = " << u << endl;
 
+    if (isnan(u)) {
+        answer << "There are can not be more iterations because of NAN numbers" << endl;
+        return false;
+    }
+
     for (int i = 0; i < size; i++)
         X[i] = oldX[i] - u * w1[i];
+    return true;
 }
 
 void MethodGradient::printIteration(){
@@ -129,13 +149,13 @@ void MethodGradient::printIteration(){
     if (countE() > e)
         answer << "e < maxR" << endl << endl;
     else {
-        answer << "e >= maxR" << endl << "So the answer:" << endl; printX(); answer << endl;
+        answer << "e >= maxR" << endl << "So the answer:" << endl; printNewX(); answer << endl;
     }
 }
 
 
-float MethodGradient::countE() {
-    float maxR = abs(r[0]);
+long double MethodGradient::countE() {
+    long double maxR = abs(r[0]);
     for (int i = 1; i < size; i++)
         if (maxR < abs(r[i]))
             maxR = abs(r[i]);
@@ -143,7 +163,7 @@ float MethodGradient::countE() {
 }
 
 
-void MethodGradient::inverteMatrix() {
+bool MethodGradient::inverteMatrix() {
     for (int i = 0; i < size; i++){
         for (int j = 0; j < size; j++){
             if (i <= j) {
@@ -151,17 +171,22 @@ void MethodGradient::inverteMatrix() {
                 minor.deleteRowColumn(i, j);
                 minor.det = minor.determinant(minor.A.size());
                 insertMatrix[i][j] = minor.det * pow(-1, i + j + 2) / det;
+                if (isnan(insertMatrix[i][j])) return false;
             }
             else
                 insertMatrix[i][j] = insertMatrix[j][i];
         }
     }
+    answer << "Determinant = " << det << endl << endl;
+    answer << "insertMatrix:" << endl;
     for (int i = 0; i < size; i++) {
         for (int j = 0; j < size; j++) {
             answer << insertMatrix[i][j] << "  ";
         }
         answer << endl;
     }
+    answer << endl;
+    return true;
 }
 
 void MethodGradient::deleteRowColumn(int row, int column) {

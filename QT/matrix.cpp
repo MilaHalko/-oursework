@@ -1,6 +1,6 @@
 #include "matrix.h"
 
-Matrix::Matrix(int size, float e, vector<vector<float>> &A, vector<float> &B): size(size), e(e), iterationCounter(0), answerFile("Answer.txt") {
+Matrix::Matrix(int size, long double e, vector<vector<long double>> &A, vector<long double> &B): size(size), e(e), iterationCounter(0) {
     this->A.resize(size);
     this->B.resize(size);
     this->X.resize(size);
@@ -25,8 +25,8 @@ Matrix::~Matrix(){
 
 bool Matrix::DiagonalPrevails() {
     for (int i = 0; i < size; i++) {
-        int diagonal = abs(A[i][i]);
-        int others = 0;
+        long double diagonal = abs(A[i][i]);
+        long double others = 0;
 
         for (int j = 0; j < size; j++)
             if (j != i)
@@ -69,8 +69,8 @@ long double Matrix::determinant(int size) {
 
 bool Matrix::changeMatrix() {
     vector<bool> sub (size, false);
-    vector<vector<float>> subA (size);
-    vector<float> subB (size);
+    vector<vector<long double>> subA (size);
+    vector<long double> subB (size);
 
     for (int i = 0; i < size; i++)
         subA[i].resize(size);
@@ -111,8 +111,8 @@ bool Matrix::SymmetryExists() {
 }
 
 
-float Matrix::countE(){
-    float maxSubtraction = abs(X[0] - oldX[0]);
+long double Matrix::countE(){
+    long double maxSubtraction = abs(X[0] - oldX[0]);
     for (int i = 1; i < size; i++)
         if (maxSubtraction < abs(X[i] - oldX[i]))
             maxSubtraction = abs(X[i] - oldX[i]);
@@ -133,6 +133,12 @@ void Matrix::printX() {
     answer << endl;
 }
 
+void Matrix::printNewX() {
+    for (int i = 0; i < size; i++) {
+        answer << "X" << i << " = " << X[i] << endl;
+    }
+    answer << endl;
+}
 
 void Matrix::getAnswer(QVector<QString> &answerSTR) {
     answer.close();

@@ -47,8 +47,8 @@ font-family: 'Times New Roman', 14;</string>
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>420</y>
-     <width>598</width>
+     <y>400</y>
+     <width>401</width>
      <height>18</height>
     </rect>
    </property>
@@ -88,7 +88,7 @@ font-size: 5.0em;
 font-family: 'Times New Roman', 14;</string>
       </property>
       <property name="text">
-       <string>don’t leave the fields empty, write numbers. Use a dot instead of coma if you need float number.</string>
+       <string>don’t leave the fields empty, write numbers. Use a dot instead </string>
       </property>
      </widget>
     </item>
@@ -371,7 +371,7 @@ font-size: 5.0em;
 font-family: 'Times New Roman', 14;</string>
    </property>
    <property name="text">
-    <string>write only numbers. Size 0 is not correct.</string>
+    <string>write only numbers. Size can be from 2 to 50.</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_16">
@@ -407,7 +407,7 @@ font-family: 'Times New Roman', 14;</string>
     <rect>
      <x>80</x>
      <y>350</y>
-     <width>261</width>
+     <width>321</width>
      <height>20</height>
     </rect>
    </property>
@@ -426,7 +426,7 @@ font-size: 5.0em;
 font-family: 'Times New Roman', 14;</string>
    </property>
    <property name="text">
-    <string>write float positive number using a dot.</string>
+    <string>write float positive number using a dot. (0.0.. -  0.00001)</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -487,6 +487,31 @@ border: 1.5px solid rgb(141, 156, 201);</string>
    </property>
    <property name="text">
     <string>Go Back</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_17">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>430</y>
+     <width>581</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+     <pointsize>14</pointsize>
+     <italic>true</italic>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(27, 46, 79);
+font-size: 5.0em;
+font-family: 'Times New Roman', 14;</string>
+   </property>
+   <property name="text">
+    <string>of coma if you need float number. Numbers can be from -999 to 999, remain is not less than 0.00001.</string>
    </property>
   </widget>
  </widget>

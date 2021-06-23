@@ -2,20 +2,20 @@
 #include "matrix.h"
 
 class MethodGradient : public Matrix {
-    vector<float> r;            // vector r for counting u
+    vector<long double> r;            // vector r for counting u
     long double u;              // number u = oldX - u * AA'r
-    vector<float> w1;           // vector A'r
-    vector<float> w2;           // vector AA'r
-    vector<vector<float>> insertMatrix;     // A'
+    vector<long double> w1;           // vector A'r
+    vector<long double> w2;           // vector AA'r
+    vector<vector<long double>> insertMatrix;     // A'
 
-    void countX();                          // counts all X for 1 itteration
-    float countE();                         // compare e to r vector max number
-    void inverteMatrix();                   // creates invertMatrix
+    bool countX();                          // counts all X for 1 itteration
+    long double countE();                         // compare e to r vector max number
+    bool inverteMatrix();                   // creates invertMatrix
     void deleteRowColumn(int, int);         // Minor creating
-    void printIteration();      // data for ofstrean answer
+    void printIteration();                  // data for ofstrean answer
 public:
-    MethodGradient (int, float, vector<vector<float>>&, vector<float>&);
+    MethodGradient (int, long double, vector<vector<long double>>&, vector<long double>&);
     ~MethodGradient();
 
-    bool Iteration();           // count X using Gradient method
+    string Iteration();           // count X using Gradient method
 };

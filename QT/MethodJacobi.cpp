@@ -1,28 +1,33 @@
 #include "MethodJacobi.h"
 
-MethodJacobi::MethodJacobi(int size, float e, vector<vector<float>> &A, vector<float> &B) : Matrix(size, e, A, B) {}
+MethodJacobi::MethodJacobi(int size, long double e, vector<vector<long double>> &A, vector<long double> &B) : Matrix(size, e, A, B) {}
 
-bool MethodJacobi::Iteration(){
+string MethodJacobi::Iteration(){
     MethodJacobi subMatrix(this->size, this->e, this->A, this->B);
     det = subMatrix.determinant(size);
-    if (det == 0) return false;
+    if (det == 0  ||  isnan(det)) return "The determinant is 0 or NAN";
     if(!DiagonalPrevails())
         if(!changeMatrix())
-            return false;
-    if (!DiagonalPrevails()) return false;
+            return "Diagonal elements are not prevailing";
+    if (!DiagonalPrevails()) return "Diagonal elements are not prevailing";
     answer << "Determinant = " << det << endl << endl;
     do {
         iterationCounter++;
         setOldX();
-        for (int i = 0; i < size; i++)
+        for (int i = 0; i < size; i++) {
             X[i] = getIterationResult(i);
+            if (isnan(X[i])) {
+                answer << "There are can not be more iterations because of NAN numbers" << endl;
+                break;
+            }
+        }
         printIteration();
     } while (countE() > e);
-    return true;
+    return "1";
 }
 
-float MethodJacobi::getIterationResult(int i) {
-    float result = 0;
+long double MethodJacobi::getIterationResult(int i) {
+    long double result = 0;
     for (int j = 0; j < size; j++)
         if (i != j)
             result += -(A[i][j] * oldX[j] / A[i][i]);
@@ -46,6 +51,6 @@ void MethodJacobi::printIteration() {
     if (countE() > e)
         answer << "e < maxX" << endl << endl;
     else {
-        answer << "e >= maxX" << endl << "So the answer:" << endl; printX(); answer << endl;
+        answer << "e >= maxX" << endl << "So the answer:" << endl; printNewX(); answer << endl;
     }
 }

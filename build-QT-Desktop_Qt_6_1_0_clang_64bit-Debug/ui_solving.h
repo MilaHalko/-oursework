@@ -28,7 +28,7 @@ class Ui_Solving
 public:
     QWidget *verticalLayoutWidget;
     QVBoxLayout *verticalLayout;
-    QPushButton *pushButton;
+    QPushButton *pushButton_3;
     QSpacerItem *verticalSpacer;
     QPushButton *pushButton_2;
     QWidget *verticalLayoutWidget_2;
@@ -47,24 +47,24 @@ public:
         Solving->setStyleSheet(QString::fromUtf8("background-color: rgb(213, 228, 255);"));
         verticalLayoutWidget = new QWidget(Solving);
         verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(730, 10, 118, 571));
+        verticalLayoutWidget->setGeometry(QRect(730, 20, 123, 571));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
-        pushButton = new QPushButton(verticalLayoutWidget);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton_3 = new QPushButton(verticalLayoutWidget);
+        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
         QFont font;
         font.setFamilies({QString::fromUtf8("Times New Roman")});
         font.setPointSize(14);
         font.setBold(true);
-        pushButton->setFont(font);
-        pushButton->setStyleSheet(QString::fromUtf8("color: rgb(27, 46, 79);\n"
+        pushButton_3->setFont(font);
+        pushButton_3->setStyleSheet(QString::fromUtf8("color: rgb(27, 46, 79);\n"
 "font-size: 5.0em;\n"
 "font-family: 'Times New Roman', 14;\n"
 "background-color: rgb(243, 255, 251);\n"
 "border: 1.5px solid rgb(141, 156, 201);"));
 
-        verticalLayout->addWidget(pushButton);
+        verticalLayout->addWidget(pushButton_3);
 
         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
@@ -83,7 +83,7 @@ public:
 
         verticalLayoutWidget_2 = new QWidget(Solving);
         verticalLayoutWidget_2->setObjectName(QString::fromUtf8("verticalLayoutWidget_2"));
-        verticalLayoutWidget_2->setGeometry(QRect(10, 10, 711, 581));
+        verticalLayoutWidget_2->setGeometry(QRect(10, 10, 711, 591));
         verticalLayout_2 = new QVBoxLayout(verticalLayoutWidget_2);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
@@ -92,7 +92,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 707, 577));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 707, 587));
         verticalLayout_3 = new QVBoxLayout(scrollAreaWidgetContents);
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
         label = new QLabel(scrollAreaWidgetContents);
@@ -130,7 +130,6 @@ public:
 
 
         retranslateUi(Solving);
-        QObject::connect(pushButton, &QPushButton::clicked, Solving, qOverload<>(&QDialog::close));
 
         QMetaObject::connectSlotsByName(Solving);
     } // setupUi
@@ -138,7 +137,7 @@ public:
     void retranslateUi(QDialog *Solving)
     {
         Solving->setWindowTitle(QCoreApplication::translate("Solving", "Dialog", nullptr));
-        pushButton->setText(QCoreApplication::translate("Solving", "Go back", nullptr));
+        pushButton_3->setText(QCoreApplication::translate("Solving", "Show graphic", nullptr));
         pushButton_2->setText(QCoreApplication::translate("Solving", "Safe solution", nullptr));
         label->setText(QCoreApplication::translate("Solving", "Solution:", nullptr));
     } // retranslateUi

@@ -2,11 +2,11 @@
 #include "matrix.h"
 
 class MethodJacobi : public Matrix {
-    float getIterationResult(int);      // X[i] counting
+    long double getIterationResult(int);      // X[i] counting
     void printIteration();              // data for ofstream answer
 public:
-    MethodJacobi (int, float, vector<vector<float>>&, vector<float>&);
+    MethodJacobi (int, long double, vector<vector<long double>>&, vector<long double>&);
 
-    bool Iteration();                   // count X using Jacobi algorithm
+    string Iteration();                   // count X using Jacobi algorithm
 };
 

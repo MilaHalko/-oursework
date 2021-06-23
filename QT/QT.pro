@@ -1,6 +1,6 @@
 QT       += core gui
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
 
 CONFIG += c++11
 
@@ -14,10 +14,12 @@ SOURCES += \
     MethodJacobi.cpp \
     checkinginput.cpp \
     filename.cpp \
+    graphic.cpp \
     helpwindow.cpp \
     main.cpp \
     mainwindow.cpp \
     matrix.cpp \
+    qcustomplot.cpp \
     solving.cpp
 
 HEADERS += \
@@ -27,13 +29,16 @@ HEADERS += \
     SOLEMethodsLibrary.h \
     checkinginput.h \
     filename.h \
+    graphic.h \
     helpwindow.h \
     mainwindow.h \
     matrix.h \
+    qcustomplot.h \
     solving.h
 
 FORMS += \
     filename.ui \
+    graphic.ui \
     helpwindow.ui \
     mainwindow.ui \
     solving.ui

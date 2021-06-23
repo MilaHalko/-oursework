@@ -20,14 +20,14 @@
    <property name="geometry">
     <rect>
      <x>730</x>
-     <y>10</y>
-     <width>118</width>
+     <y>20</y>
+     <width>123</width>
      <height>571</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="pushButton_3">
       <property name="font">
        <font>
         <family>Times New Roman</family>
@@ -44,7 +44,7 @@ background-color: rgb(243, 255, 251);
 border: 1.5px solid rgb(141, 156, 201);</string>
       </property>
       <property name="text">
-       <string>Go back</string>
+       <string>Show graphic</string>
       </property>
      </widget>
     </item>
@@ -91,7 +91,7 @@ border: 1.5px solid rgb(141, 156, 201);</string>
      <x>10</x>
      <y>10</y>
      <width>711</width>
-     <height>581</height>
+     <height>591</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -106,7 +106,7 @@ border: 1.5px solid rgb(141, 156, 201);</string>
          <x>0</x>
          <y>0</y>
          <width>707</width>
-         <height>577</height>
+         <height>587</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -173,22 +173,5 @@ border: 1.5px solid rgb(141, 156, 201);</string>
   </widget>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>pushButton</sender>
-   <signal>clicked()</signal>
-   <receiver>Solving</receiver>
-   <slot>close()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>559</x>
-     <y>24</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>561</x>
-     <y>69</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>
