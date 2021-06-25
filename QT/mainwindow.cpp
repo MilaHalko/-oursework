@@ -56,7 +56,7 @@ void MainWindow::on_start_clicked() {
 
 void MainWindow::countSOLE() {
     int size = ui->size->text().toInt();
-    long double e = ui->accuracy->text().toLong();
+    long double e = ui->accuracy->text().toFloat();
     vector<vector<long double>> A (ui->size->text().toInt());
     vector<long double> B (ui->size->text().toInt());
 
